@@ -7,7 +7,7 @@
 		var $linkDB;
 		var $Errores = array();
 
-		  function clsMyDB($host='localhost', $user='usr_icox', $pass='pas_icox', $database='icox'){
+		  function clsMyDB($host='localhost', $user='usr_icox_es', $pass='pas_icox_es', $database='icox_com_prueba'){
 			$this->Connect($host, $user, $pass, $database);
 		}
 		function Connect($host = '', $user = '', $pass = '', $database=''){
@@ -32,7 +32,7 @@
 		}
 		function isConnected(){
 			if (!$this->linkDB){
-				$this->Errores['Connect'] = 'No hay una conexión disponible'; return FALSE;
+				$this->Errores['Connect'] = 'No hay una conexiï¿½n disponible'; return FALSE;
 			}
 			if (empty($this->Database)){
 				$this->Errores['Select_DB'] = 'No hay una BD disponible'; return FALSE;
@@ -47,7 +47,7 @@
 			if (!$result){
 				$this->Errores['Query'] = 'No es posible ejecutar la consulta!'; return FALSE;
 			} elseif (mysql_num_rows($result) == 0){
-				$this->Errores['Query'] = 'La consulta no devolvió registros!'; return FALSE;
+				$this->Errores['Query'] = 'La consulta no devolviï¿½ registros!'; return FALSE;
 			}
 			return $result;
 		}
@@ -167,7 +167,7 @@
 	        	$result[1] = "El email parece incorrecto (revise el @ y los puntos)";
 	        	return $result;
 			}
-			$result[0] = true; $result[1] = "$Email es válido.";
+			$result[0] = true; $result[1] = "$Email es vï¿½lido.";
 	    	return $result;
 		}
 //---------------------------------------------------------
