@@ -1,0 +1,51 @@
+{include file="encabezado.tpl.html"}
+
+<form method="post" action="{$stACTION}">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE">
+  	<tr>
+      <td align="center" class="tmFormHeaderFont" colspan="2">{$stBTN_ACTION} administrador</td>
+    </tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre *</td>
+      <td class="tmDataTD"><input name="nombre" value="{$stNOMBRE}" style="width:330px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Apellido *</td>
+      <td class="tmDataTD"><input name="apellido" value="{$stAPELLIDO}" style="width:330px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Email *</td>
+      <td class="tmDataTD"><input name="email" value="{$stEMAIL}" size="60" class="tmInput"></td>
+    </tr>
+{  if $stSHOW_PASSWORD}
+    <tr>
+      <td class="tmFieldCaptionTD">Anterior contrase&ntilde;a *</td>
+      <td class="tmDataTD"><input type="password" name="oldpassword" class="tmInput"></td>
+    </tr>
+{  /if}
+    <tr>
+      <td class="tmFieldCaptionTD">Nueva contrase&ntilde;a *</td>
+      <td class="tmDataTD"><input type="password" name="newpassword" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Confirmaci&oacute;n *</td>
+      <td class="tmDataTD"><input type="password" name="confirma" class="tmInput"></td>
+    </tr>
+{  if $stSHOW_ENABLED}
+    <tr>
+      <td class="tmFieldCaptionTD">Habilitado</td>
+      <td class="tmDataTD"><input type="checkbox" name="enabled" class="tmInput" {$stENABLED}></td>
+    </tr>
+{  /if}
+    <tr>
+      <td colspan="2" align="right">
+        <input name="btn_action" type="submit" value="Aceptar" class="tmButton">
+        <input name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='{$stRUT}';">
+        <input name="id" type="hidden" value="{$stID}">
+        <input name="ban" type="hidden" value="{$stBAN}">
+      </td>
+    </tr>
+  </table>
+</form>
+{include file="pie.tpl.html"}

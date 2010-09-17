@@ -1,0 +1,44 @@
+{include file="encabezado.tpl.html"}
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="500">
+  	<tr>
+      <td class="tmFormHeaderFont" colspan="2" align="center">{$stBTN_ACTION} contacto</td>
+    </tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD" width="60">Fecha</td>
+      <td class="tmDataTD">{$stFECHA}</td>
+    </tr>
+     <tr>
+      <td class="tmFieldCaptionTD">Nombre</td>
+      <td class="tmDataTD">{$stNOMBRE}</td>
+    </tr>
+	<tr>
+      <td class="tmFieldCaptionTD">Email</td>
+      <td class="tmDataTD">{$stEMAIL}</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Tel&eacute;fono</td>
+      <td class="tmDataTD">{$stTELEFONO}</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Pa&iacute;s</td>
+      <td class="tmDataTD">{$stPAIS|default:'&nbsp;'}</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Ciudad</td>
+      <td class="tmDataTD">{$stCIUDAD|default:'&nbsp;'}</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Direcci&oacute;n</td>
+      <td class="tmDataTD">{$stDIRECCION|default:'&nbsp;'}</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Consulta</td>
+      <td class="tmDataTD">{$stCONSULTA|default:'&nbsp;'}</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top:10px;text-align:right;">
+		<input name="btn_volver" type="button" value="Volver" class="tmButton" onclick="location.href='cnt.listar.php';">
+    </tr>
+  </table>
+{include file="pie.tpl.html"}

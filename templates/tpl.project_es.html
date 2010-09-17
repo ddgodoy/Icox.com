@@ -1,0 +1,83 @@
+{include file="tpl.cabecera_es.html"}
+<!--	inicio cuerpo		-->
+			<tr>
+				<td valign="top" class="cuerpo">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
+					<tr>
+					{include file="tpl.col_izquierda_es.html"}
+					<!--	inicio columna cuerpo		-->
+<td class="col_cuerpo" valign="top" align="center">
+<script language="javascript" type="text/javascript">
+{literal}
+function startGallery() {
+	var myGallery = new gallery($('myGallery'), {timed: false});
+}
+window.onDomReady(startGallery);
+{/literal}
+</script>
+	<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+			<!--	inicio contenido cuerpo		-->
+			<div class="div_cuerpo">
+			<br />
+			<div class="titulo_2">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+			    <td width="58%">{$stNOMBRE}</td>
+			    <td width="8%" height="20" align="right"><img src="{$stRUTAS.images}pdf.gif" /></td>
+			    <td width="34%" align="right" class="brochure">
+			    	<div class="alertaPdf" style="display:none;">
+			    		<p>Debe estar logueado para<br />bajar el folleto del proyecto</p>
+			    	</div>
+			    	<strong>Calidad Folleto Proyecto:</strong>
+			    	&nbsp;<a href="project_pdf.php?Id={$stID}&q=h" target="_blank">Alta</a>
+			    	&nbsp;<a href="project_pdf.php?Id={$stID}&q=l" target="_blank">Baja</a>
+			     </td>
+			  </tr>
+			</table>
+			</div>
+			{if $stREFERENCIA}
+				<p><a href="{$stREFERENCIA}" target="_blank" class="subtitulo_1">{$stREFERENCIA}</a></p>
+			{/if}
+<div align="center">
+{if $stFOTOS}
+  <div id="myGallery">
+{foreach from=$stFOTOS item=valor}
+    <div class="imageElement"><img src="{$valor}" class="full" /></div>
+{/foreach}
+  </div>
+{else}
+	{if $stIMAGEN}<img src="{$stIMAGEN}" border="0">{/if}
+{/if}
+</div>
+			{if $stCLIENTE}<p class="subtitulo_1" style="text-align:center;">Cliente:&nbsp;<span style="color:#2C2C2C;">{$stCLIENTE}</span></p>{/if}	
+			{if $stOBJETIVO}
+				<p class="subtitulo_1">Objetivo</p>
+				<p class="txt_cuerpo">{$stOBJETIVO}</p>
+			{/if}
+			{if $stSITUACION}
+				<p class="subtitulo_1">Situaci&oacute;n</p>
+				<p class="txt_cuerpo">{$stSITUACION}</p>
+			{/if}
+			{if $stPROPUESTA}
+				<p class="subtitulo_1">Propuesta</p>
+				<p class="txt_cuerpo">{$stPROPUESTA}</p>
+			{/if}
+			{if $stRESULTADOS}
+				<p class="subtitulo_1">Resultados</p>
+				<p class="txt_cuerpo">{$stRESULTADOS}</p>
+			{/if}
+			</div>
+			<!--	final contenido cuerpo		-->
+			</td>
+		</tr>
+	</table>
+</td>
+					<!--	final columna cuerpo		-->
+					</tr>
+				</table>
+				</td>
+			</tr>
+<!--	fin cuerpo		-->
+{include file="tpl.pie_es.html"}

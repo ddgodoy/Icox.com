@@ -1,0 +1,36 @@
+{include file="encabezado.tpl.html"}
+<table width="500" border="0">
+<tr>
+<td>
+<form method="post" action="{$stACTION}" enctype="multipart/form-data">
+  <font class="tmFormHeaderFont">{$stBTN_ACTION} imagen para {$stTITULO}</font><br>
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="500">
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+     <tr>
+      <td class="tmFieldCaptionTD" style="text-align:right;" width="50">Imagen</td>
+      <td class="tmDataTD">
+      	<input id="imagen" name="imagen" type="file" class="tmInput" onchange="doPreview('imagen','preview')" />&nbsp;[440*330]
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" height="30" valign="bottom">
+        <input name="btn_accion" type="submit" value="Aceptar" class="tmButton">
+        <input name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='img.listar.php?codigo={$stCODIGO}';">
+        <input name="id" type="hidden" value="{$stID}" />
+        <input name="codigo" type="hidden" value="{$stCODIGO}" />
+      </td>
+    </tr>
+  </table>
+</form>
+<table border="0" cellpadding="0" cellspacing="0" width="500" class="tmFormTABLE" style="height:350px;">
+	<tr>
+	<td align="center" valign="middle">
+    <div style="scroll:no;overflow:auto;width:440px;height:330px;background-image:url('{$stRUTAS.images}_fondo_upload.gif');border-width:0px;">
+		{if $stIMAGEN}<img src="{$stIMAGEN}" id="preview" border="0">{else}<img src="{$stRUTAS.images}_nada.gif" id="preview" border="0">{/if}
+    </div>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+{include file="pie.tpl.html"}

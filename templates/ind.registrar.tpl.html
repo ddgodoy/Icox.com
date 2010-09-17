@@ -1,0 +1,25 @@
+{include file="encabezado.tpl.html"}
+<form method="post" action="{$stACTION}" name="frmCatRegistrar" enctype="multipart/form-data">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="500">
+  	<tr>
+      <td class="tmFormHeaderFont" colspan="2" align="center">{$stBTN_ACTION} industria</td>
+    </tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+     <tr>
+      <td class="tmFieldCaptionTD">Nombre *</td>
+      <td class="tmDataTD"><input name="nombre" value="{$stNOMBRE}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top:10px;">
+      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+      	<tr>
+        <td align="right"><input name="btn_accion" type="submit" value="Aceptar" class="tmButton"></td>
+		<td align="right" width="75"><input name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='ind.listar.php';"></td>
+		</tr>
+        </table>
+        <input name="id" type="hidden" value="{$stID}" />
+      </td>
+    </tr>
+  </table>
+</form>
+{include file="pie.tpl.html"}

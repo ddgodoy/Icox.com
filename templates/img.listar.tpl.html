@@ -1,0 +1,163 @@
+{include file="encabezado.tpl.html"}
+<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<div align="right" style="padding-top:5px;">
+<input type="button" class="tmButton" name="nueva_img" value="Nueva Imagen" onclick="location.href='{$stRUTAS.img}img.registrar.php?codigo={$stCODIGO}';">
+</div>
+<form method="post" action="{$stRUTAS.img}img.borrar.php?confirmado=1&amp;codigo={$stCODIGO}">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr><td class="tmFormHeaderFont">Listado de im&aacute;genes para {$stTITULO}</td></tr>
+  <tr><td height="5"></td></tr>
+  <tr><td>Hay {$stREG_TOTAL} im&aacute;genes</td></tr>
+  <tr><td><table align="center"><tr>
+	<td>
+		{if !$stLINKS.first}&nbsp;{else}
+			<a href="{$stLINKS.first}"><img src="{$stRUTAS.images}primero.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.previous}&nbsp;{else}
+			<a href="{$stLINKS.previous}"><img src="{$stRUTAS.images}anterior.gif" border="0"/></a>
+		{/if}
+	<td/>
+	<td>
+		{foreach from=$stPAGES item=link key=page}
+			{if $page == $stPAGE}{$page}&nbsp;
+			{else}<a class="tmNavigatorLink" href="{$link}">{$page}</a>&nbsp;{/if}
+		{/foreach}
+	</td>
+	<td>
+		{if !$stLINKS.next}&nbsp;{else}
+			<a href="{$stLINKS.next}"><img src="{$stRUTAS.images}siguiente.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.last}&nbsp;{else}
+			<a href="{$stLINKS.last}"><img src="{$stRUTAS.images}ultimo.gif" border="0"/></a>
+		{/if}
+	</td>
+	</tr></table></td></tr>
+<tr>
+<td width="650">
+<table cellpadding="0" cellspacing="0" border="0" align="center">
+{foreach from=$stIMAGENES item=imagen}
+	<tr>
+	{if $imagen[0].Id}
+		<td width="200" height="180" valign="middle" style="border:1px solid #cccccc;">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td align="center" valign="middle">
+					<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[0].Id}&amp;codigo={$stCODIGO}'>
+						<img src="{$imagen[0].Imagen}" border="0">
+					</a>
+					</td>
+				</tr><tr><td height="3"></td></tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tr>
+							<td>
+								<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[0].Id}&amp;codigo={$stCODIGO}'>
+									<img src='{$stRUTAS.images}editar.gif' title='Modificar' border='0'/>
+								</a>
+							</td>
+							<td align="right">
+								<a class='tmDataLink' href='{$stRUTAS.img}img.borrar.php?Id[]={$imagen[0].Id}&amp;codigo={$stCODIGO}' onclick="return confirmLink(this,'Confirma la eliminacion?')">
+									<img src='{$stRUTAS.images}borrar.gif' title='Borrar' border='0' />
+								</a>
+							</td>
+							<td align="right" width="30"><input type='checkbox' name='Id[]' value='{$imagen[0].Id}'/></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	{else}
+		<td width="200" height="180" valign="middle">&nbsp;</td>
+	{/if}
+		<td width="25" height="180">&nbsp;</td>
+	{if $imagen[1].Id}
+		<td width="200" height="180" valign="middle" style="border:1px solid #cccccc;">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td align="center" valign="middle">
+					<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[1].Id}&amp;codigo={$stCODIGO}'>
+						<img src="{$imagen[1].Imagen}" border="0">
+					</a>
+					</td>
+				</tr><tr><td height="3"></td></tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tr>
+							<td>
+								<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[1].Id}&amp;codigo={$stCODIGO}'>
+									<img src='{$stRUTAS.images}editar.gif' title='Modificar' border='0'/>
+								</a>
+							</td>
+							<td align="right">
+								<a class='tmDataLink' href='{$stRUTAS.img}img.borrar.php?Id[]={$imagen[1].Id}&amp;codigo={$stCODIGO}' onclick="return confirmLink(this,'Confirma la eliminacion?')">
+									<img src='{$stRUTAS.images}borrar.gif' title='Borrar' border='0' />
+								</a>
+							</td>
+							<td align="right" width="30"><input type='checkbox' name='Id[]' value='{$imagen[1].Id}'/></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	{else}
+		<td width="200" height="180" valign="middle">&nbsp;</td>
+	{/if}
+		<td width="25" height="180">&nbsp;</td>
+	{if $imagen[2].Id}
+		<td width="200" height="180" valign="middle" style="border:1px solid #cccccc;">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td align="center" valign="middle">
+					<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[2].Id}&amp;codigo={$stCODIGO}'>
+						<img src="{$imagen[2].Imagen}" border="0">
+					</a>
+					</td>
+				</tr><tr><td height="3"></td></tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tr>
+							<td>
+								<a class='tmDataLink' href='{$stRUTAS.img}img.modificar.php?Id={$imagen[2].Id}&amp;codigo={$stCODIGO}'>
+									<img src='{$stRUTAS.images}editar.gif' title='Modificar' border='0'/>
+								</a>
+							</td>
+							<td align="right">
+								<a class='tmDataLink' href='{$stRUTAS.img}img.borrar.php?Id[]={$imagen[2].Id}&amp;codigo={$stCODIGO}' onclick="return confirmLink(this,'Confirma la eliminacion?')">
+									<img src='{$stRUTAS.images}borrar.gif' title='Borrar' border='0' />
+								</a>
+							</td>
+							<td align="right" width="30"><input type='checkbox' name='Id[]' value='{$imagen[2].Id}'/></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	{else}
+		<td width="200" height="180" valign="middle">&nbsp;</td>
+	{/if}
+	</tr>
+	<tr><td height="5"></td></tr>
+{/foreach}
+</table></td></tr>
+	<tr><td height="15"></td></tr>
+	<tr><td align="center">
+		<input type="submit" name="btn_borrar" value="Borrar seleccionadas" class="tmButton" onclick="return confirm('Confirma la eliminacion?');">&nbsp;&nbsp;
+		<input name="btn_volver" type="button" value="Volver" class="tmButton" onclick="location.href='{$stRUTAS.pro}pro.listar.php';">
+		<input name="codigo" type="hidden" value="{$stCODIGO}" />
+	</td></tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+{include file="pie.tpl.html"}

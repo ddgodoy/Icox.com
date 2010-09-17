@@ -1,0 +1,10 @@
+cOmmOns/class.mysql.inc.php:		  function clsMyDB($host='localhost', $user='usr_icox', $pass='pas_icox', $database='icox'){
+
+// groupware/config.inc.php:$db_type = "postgresql";      // Type of database system
+// groupware/config.inc.php:$db_host = "localhost";       // Location of the database
+// groupware/config.inc.php:$db_name = "phprojekt";       // Name of the database
+
+grupoweb/cOmmOns/class.mysql.inc.php:		function clsMyDB($host='localhost', $user='grupoweb_usr_et', $pass='najera_et_113', $database='grupoweb'){
+
+longhi/cOmmOns/class.mysql.inc.php://		function clsMyDB($host = 'localhost', $user = 'root', $pass = 'internal', $database='longhi'){
+longhi/cOmmOns/class.mysql.inc.php:		function clsMyDB($host = 'localhost', $user = 'longhi_usr_et', $pass = 'azorin_et_113', $database='javierlonghi'){

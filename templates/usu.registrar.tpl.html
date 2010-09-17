@@ -1,0 +1,81 @@
+{include file="encabezado.tpl.html"}
+<form method="post" action="{$stACTION}" name="frmUsuRegistrar" enctype="multipart/form-data">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="500">
+  	<tr>
+      <td class="tmFormHeaderFont" colspan="2" align="center">{$stBTN_ACTION} usuario</td>
+    </tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre&nbsp;*</td>
+      <td class="tmDataTD"><input name="nombre" value="{$stNOMBRE}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Apellido&nbsp;*</td>
+      <td class="tmDataTD"><input name="apellido" value="{$stAPELLIDO}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Empresa</td>
+      <td class="tmDataTD"><input name="empresa" value="{$stEMPRESA}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Ubicaci&oacute;n</td>
+      <td class="tmDataTD"><input name="ubicacion" value="{$stUBICACION}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Direcci&oacute;n</td>
+      <td class="tmDataTD"><input name="direccion" value="{$stDIRECCION}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Tel&eacute;fono</td>
+      <td class="tmDataTD"><input name="telefono" value="{$stTELEFONO}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Celular</td>
+      <td class="tmDataTD"><input name="celular" value="{$stCELULAR}" style="width:430px;" class="tmInput"></td>
+    </tr>
+    <tr>
+			<td class="tmFieldCaptionTD">Habilitado</td>
+			<td class="tmDataTD"><input type="checkbox" name="habilitado" {$stHABILITADO}/></td>
+		</tr>
+    <tr><td colspan="2" align="center" style="padding:5px;color:#666666;"><strong>Acceso</strong></td></tr>
+    <tr>
+      <td colspan="2" align="center">
+      	<table cellpadding="0" cellspacing="0">
+      		<tr>
+      			<td class="tmFieldCaptionTD" align="right" style="width:85px;">Email&nbsp;&nbsp;</td>
+      			<td class="tmDataTD"><input name="email" value="{$stEMAIL}" style="width:270px;" class="tmInput"></td>
+      		</tr>
+      		<tr>
+      			<td class="tmFieldCaptionTD" align="right">Repetir email&nbsp;&nbsp;</td>
+      			<td class="tmDataTD"><input name="email_rep" value="{$stEMAIL_REP}" style="width:270px;" class="tmInput"></td>
+      		</tr>
+      		<tr>
+      			<td class="tmFieldCaptionTD" align="right">Clave&nbsp;&nbsp;</td>
+      			<td class="tmDataTD"><input type="password" name="clave" value="{$stCLAVE}" style="width:270px;" class="tmInput"></td>
+      		</tr>
+      		<tr>
+      			<td class="tmFieldCaptionTD" align="right">Repetir clave&nbsp;&nbsp;</td>
+      			<td class="tmDataTD"><input type="password" name="clave_rep" value="{$stCLAVE_REP}" style="width:270px;" class="tmInput"></td>
+      		</tr>
+      	</table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top:10px;" align="right">
+      	<table cellpadding="0" cellspacing="0" border="0">
+      	<tr>
+	        <td><input tabindex="2" name="btn_accion" type="submit" value="Aceptar" class="tmButton"></td>
+	        <td style="padding-left:5px;">
+	        	<input tabindex="2" name="btn_accion_mail" type="submit" value="Aceptar y enviar mail" class="tmButton">
+	        </td>
+					<td style="padding-left:5px;">
+						<input tabindex="3" name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='listar.php';">
+					</td>
+				</tr>
+        </table>
+        <input name="id" type="hidden" value="{$stID}" />
+      </td>
+    </tr>
+  </table>
+</form>
+{include file="pie.tpl.html"}

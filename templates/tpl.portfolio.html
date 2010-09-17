@@ -1,0 +1,69 @@
+{include file="tpl.cabecera.html"}
+<!--	inicio cuerpo		-->
+			<tr>
+				<td valign="top" class="cuerpo">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
+					<tr>
+					{include file="tpl.col_izquierda.html"}
+					<!--	inicio columna cuerpo		-->
+					<td class="col_cuerpo" valign="top" align="center">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td>
+								<div class="borde_verde" id="div_img_7"><img src="{$stRUTAS.images}img_7.jpg" border="0"></div>
+								<script type="text/javascript">var oImg_7 = new Spry.Effect.Blind('div_img_7', {ldelim}duration:1500,from:'10px',to:'180px'{rdelim});</script>
+								<!--	inicio contenido cuerpo		-->
+								<div class="div_cuerpo">
+								<br />
+								<div class="titulo_2">Portfolio</div>
+								<p class="subtitulo_1">Clients</p>
+								<p class="txt_cuerpo">
+									We offer our clients the best quality services and full advice in all their requirements. In the same manner, we follow 
+									them through the whole implementation process and we train the maintenance and "execution" personnel for the purpose of 
+									train their own human capital.<br /><br />
+									{if $stPROYECTOS}See our work for companies who demand excellence:{/if}
+								</p>
+								</div>
+{if $stPROYECTOS}
+<table border="0" width="100%">
+<tr><td height="10"></td></tr>
+{foreach from=$stPROYECTOS key=id item=valor}
+<tr>
+	<td width="170" height="120" align="center" valign="middle" bgcolor="#EAEAEA">
+	{if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo.jpg" border="0">{/if}
+	</td>
+	<td style="border-bottom:1px dashed #B7B7B5;">
+		<div class="txt_proyecto"><strong>{$valor.Nombre}</strong></div>
+		<div class="txt_proyecto" style="padding-top:5px;">{$valor.Referencia}</div>
+		{if $valor.VerMas}
+			<div style="text-align:right;"><span class="txt_ver_mas" onclick="document.location='project.php?Id={$id}';">view more</span></div>
+		{/if}
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+{/foreach}
+</table>
+<table border="0" align="center">
+<tr>
+	<td class="txt_paginado">
+		{foreach from=$stPAGES item=link key=page}
+			{if $page == $stPAGE}{$page}&nbsp;
+			{else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
+		{/foreach}
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+</table>
+{/if}
+								<!--	final contenido cuerpo		-->
+								</td>
+							</tr>
+						</table>
+					</td>
+					<!--	final columna cuerpo		-->
+					</tr>
+				</table>
+				</td>
+			</tr>
+<!--	fin cuerpo		-->
+{include file="tpl.pie.html"}

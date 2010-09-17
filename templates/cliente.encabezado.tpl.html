@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>{$stTITLE|default:'Icox Consulting :: Gesti&oacute;n de Dominios'}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="{$stRUTAS.estilo}admin.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="all" href="{$stRUTAS.calendr}skin/theme.css"/>
+	<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}functions.js"></script>
+</head>
+<body>
+<center>
+<div style="border:3px solid #EBEBE9;width:760px;">
+<table cellSpacing="0" cellPadding="0" border="0">
+	<tr><td><img src="{$stRUTAS.images}logo.jpg" border="0" width="760"></td></tr>
+</table>
+<table width="760" style="height:400px" cellpadding="2" cellspacing="0" align="center" bgcolor="#FFFFFF">
+<tr>
+	<td vAlign="top" width="13%" class="tmColumnTD">
+	<table width="100%" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF">
+{foreach from=$stCONTENIDO key=id item=sub}
+	<tr>
+{	if $sub.Desc == "-"}
+		<td class="tmColumnTD" height="10"></td>
+{	elseif !$sub.Link}
+		<td class="tmColumnTD" align="center">{$sub.Desc}</td>
+{	else}
+		<td class='tmDataTD' align="center" style="padding-top:3px;padding-bottom:3px;"><a class='tmDataLink' href='{$sub.Link}'>{$sub.Desc}</a></td>
+{	/if}
+	</tr>
+{/foreach}
+	</table>
+	</td>
+	<td style="padding-right:6px;padding-left:6px;padding-bottom:6px;" valign="top" width="87%">

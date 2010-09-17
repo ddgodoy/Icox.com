@@ -1,0 +1,31 @@
+{include file="encabezado.tpl.html"}
+	<br /><br /><br />
+	<form method="POST" action="{$stACTION}" id="frmLogin" name="frmLogin">
+		<table cellpadding="2" cellspacing="0" align="center" width="245" class="tmDataTD">
+			<tr>
+				<td colspan="2" valign="middle" align="center">Ingrese su Login y Contraseña</td>
+				<td><img src="{$stRUTAS.images}login.gif" border="0"/></td>
+			</tr>
+		</table>
+		<table cellpadding="2" cellspacing="0" align="center" width="240">
+			<tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+			<tr>
+				<td class="tmFieldCaptionTD" align="right">Login</td>
+				<td class="tmDataTD"><input type="text" name="login" maxlength="40" value="{$stLOGIN}" size="27" class="tmInput"></td>
+			</tr>
+			<tr>
+				<td class="tmFieldCaptionTD" align="right">Contraseña</td>
+				<td class="tmDataTD"><input type="password" name="password" maxlength="40" size="27" class="tmInput"></td>
+			</tr>
+			<!--<tr>
+				<td colspan="2" class="tmDataTD" align="right" style="padding-bottom:6px;">
+					<a href="recordar.php" class="Link_olvido">Olvidó su contraseña?</a>
+				</td>
+			</tr>-->
+			<tr>
+				<td colspan="2" align="right" class="tmDataTD"><input name="btnLogin" type="submit" value="Ingresar" class="tmButton" /></td>
+			</tr>
+		</table>
+	</form>
+<script type="text/javascript">document.frmLogin.login.focus();</script>
+{include file="pie.tpl.html"}

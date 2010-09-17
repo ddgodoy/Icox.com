@@ -1,0 +1,238 @@
+/*-- inicio body --*/
+body {
+	background-color: #6D7A84;
+	margin: 0px;
+}
+select{
+	font-family: arial;
+	font-size: 12px;	
+	color: #3E534F;
+	background-color: #C5E292;
+	border: 1px solid #B5DB75;
+}
+.caja_texto{
+	font-family: arial;
+	font-size: 12px;	
+	color: #455D58;
+	background-color: #C5E292;
+	border: 1px solid #96CD3F;
+}
+.boton{
+	font-family: arial;
+	font-size: 12px;	
+	color: #FFFFFF;
+	background-color: #444444;
+	border: 1px solid #181818;
+}
+/*-- inicio textos --*/
+.titulo_3{
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #3A4E5C;
+}
+.titulo_4{
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #696969;
+}
+.txt_menu{
+	font-family: arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3A4E5C;
+	cursor: pointer;
+}
+.txt_izq{
+	font-family: arial;
+	font-size: 12px;
+	color: #666666;
+	cursor: pointer;
+}
+.txt_pie{
+	font-family: arial;
+	font-size: 11px;
+	color: #656565;
+}
+.txt_copyright{
+	font-family: arial;
+	font-size: 11px;
+	color: #51626E;
+}
+.txt_cuerpo{
+	font-family: arial;
+	font-size: 12px;
+	color: #2C2C2C;
+	text-align: justify;
+	line-height: 18px;
+}
+.txt_proyecto{
+	font-family: arial;
+	font-size: 12px;
+	color: #676767;
+	text-align: left;
+}
+.txt_ver_mas{
+	font-family: arial;
+	font-size: 12px;
+	color: #96CD3F;
+	cursor: pointer;
+	font-weight: bold;
+}
+.res_cuerpo{
+	font-family: arial;
+	font-size: 13px;
+	color: #455E6D;
+}
+.titulo_1{
+	width: 180px;
+	height: 25px;
+	background-color: #3A4E5C;
+	color: #6D7A84;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+}
+.titulo_2{
+	color: #85B830;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: 1px dashed #B7B7B5;
+	margin-bottom: 6px;
+	text-align: left;
+}
+.subtitulo_1{
+	color: #455E6D;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: left;
+}
+.texto_partners{
+	color: #455E6D;
+	font-family: arial;
+	font-size: 12px;
+}
+.texto_error{
+	color: #FF0000;
+	font-family: arial;
+	font-size: 12px;
+	text-align: center;
+}
+.texto_mensaje{
+	color: #3A4E5C;
+	font-family: arial;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+}
+.txt_paginado{
+	color: #2C2C2C;
+	font-family: arial;
+	font-size: 11px;
+}
+.a_pie{
+	font-family: arial;
+	font-size: 11px;
+	color: #51626E;
+	text-decoration: none;
+}
+/*-- inicio layout --*/
+.menu{
+	height: 30px;
+	background-color: #96CD3F;
+}
+.cuerpo{
+	height: 450px;
+	background-color: #EBEBE9;
+}
+.pie{
+	height: 72px;
+	background-image: url(../images/pie.jpg);
+}
+.div_cuerpo{
+	width: 600px;
+}
+.col_izquierda{
+	width: 160px;
+	height: 100%;
+}
+.col_cuerpo{
+	width: 640px;
+	height: 100%;
+	background-color: #E2E3DF;
+}
+.alertaPdf  {
+	position: absolute;
+	background-color: #EFEFEF;
+	font-size: 10px;
+	color: #999999;
+	padding: 5px;
+	border: 1px solid #666666;
+	text-align: left;
+	z-index: 50;
+	margin-top: 20px;
+	margin-right: 0px;	
+}
+.brochure {
+	font-size: 11px;
+	color: #666666;
+}
+.brochure a {
+	color: #666666;
+	font-weight: normal;
+	margin-left: 5px;
+}
+.brochure a:hover {
+	color: #333333;
+}
+.borde_verde{
+	width: 600px;
+	border-bottom: 25px solid #96CD3F;
+	border-left: 4px solid #96CD3F;
+	border-right: 4px solid #96CD3F;
+	display: none;
+}
+.borde_filtro{
+	border-top: 1px solid #CFD0CB;
+	border-bottom: 1px solid #CFD0CB;
+}
+.texto_filtro{
+	font-family: arial;
+	font-size: 12px;
+	color: #6D6D6B;
+}
+/*--------------------------------------------*/
+.clientes_li {
+ font-size: 11px;
+ font-weight: bold;
+ color: #6D6D6B;
+ list-style-type: none;
+ font-family: Arial, Helvetica, sans-serif;
+ list-style-image: url(../images/bullet.gif);
+ text-align: left;
+  
+}
+.clientes_li li {
+ margin-top: 8px;
+ margin-bottom: 8px;
+}
+.a_pie img{
+	margin-bottom: -3px;
+}
+.logo_pie img {
+	margin-top: 10px;
+	
+}
+.txt_ofices {
+	font-size: 10px;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.txt_ofices strong{
+	color: #333333;
+}
+/*--------------------------------------------*/

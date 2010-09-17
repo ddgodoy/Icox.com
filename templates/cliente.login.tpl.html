@@ -1,0 +1,26 @@
+{include file="cliente.encabezado.tpl.html"}
+	<br /><br /><br />
+	<form method="POST" action="{$stACTION}" id="frmLogin" name="frmLogin">
+		<table cellpadding="2" cellspacing="0" align="center" width="245" class="tmDataTD">
+			<tr>
+				<td colspan="2" valign="middle" align="center">Ingrese su Email y Clave</td>
+				<td><img src="{$stRUTAS.images}login.gif" border="0"/></td>
+			</tr>
+		</table>
+		<table cellpadding="2" cellspacing="0" align="center" width="240">
+			<tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+			<tr>
+				<td class="tmFieldCaptionTD" align="right">&nbsp;Email&nbsp;</td>
+				<td class="tmDataTD"><input type="text" name="email" value="{$stEMAIL}" size="27" class="tmInput"></td>
+			</tr>
+			<tr>
+				<td class="tmFieldCaptionTD" align="right">Clave</td>
+				<td class="tmDataTD"><input type="password" name="password" size="27" class="tmInput"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right" class="tmDataTD"><input name="btnLogin" type="submit" value="Ingresar" class="tmButton" /></td>
+			</tr>
+		</table>
+	</form>
+<script type="text/javascript">document.frmLogin.email.focus();</script>
+{include file="cliente.pie.tpl.html"}

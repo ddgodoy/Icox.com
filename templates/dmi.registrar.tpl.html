@@ -1,0 +1,215 @@
+{include file="encabezado.tpl.html"}
+<script type="text/javascript" src="{$stRUTAS.jscript}dominios.js"></script>
+
+<form method="post" action="{$stACTION}" name="frmDmiRegistrar" enctype="multipart/form-data">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="500">
+  	<tr>
+      <td class="tmFormHeaderFont" colspan="2" align="center">
+      	{$stBTN_ACTION} dominio
+      	{if $stCREADO}<span style="font-size:10px;padding-left:20px;">creado:&nbsp;{$stCREADO}&nbsp;|&nbsp;actualizado:&nbsp;{$stACTUALIZADO}</span>{/if}
+      </td>
+    </tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Usuario *</td>
+      <td class="tmDataTD"><select class="tmInput" name="usuario_id">{$stUSUARIOS}</select></td>
+    </tr>
+     <tr>
+      <td class="tmFieldCaptionTD">Dominio *</td>
+      <td class="tmDataTD">
+      	<input name="dominio" value="{$stDOMINIO}" style="width:430px;{if $stCAMBIOS_USUARIO.dominio}background-color:#FFFF99;{/if}" class="tmInput">
+      </td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">DNS&nbsp;primario</td>
+      <td class="tmDataTD">
+      	<table cellpadding="0" cellspacing="0" width="100%">
+      		<tr>
+      			<td><input name="dns_primario" value="{$stDNS_PRIMARIO}" style="width:250px;{if $stCAMBIOS_USUARIO.dns_primario}background-color:#FFFF99;{/if}" class="tmInput"></td>
+      			<td>&nbsp;IP&nbsp;</td>
+      			<td align="right"><input name="ip_primario" value="{$stIP_PRIMARIO}" style="width:150px;{if $stCAMBIOS_USUARIO.ip_primario}background-color:#FFFF99;{/if}" class="tmInput"></td>
+      		</tr>
+      	</table>
+      </td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">DNS&nbsp;secundario</td>
+      <td class="tmDataTD">
+      	<table cellpadding="0" cellspacing="0" width="100%">
+      		<tr>
+      			<td><input name="dns_secundario" value="{$stDNS_SECUNSARIO}" style="width:250px;{if $stCAMBIOS_USUARIO.dns_secundario}background-color:#FFFF99;{/if}" class="tmInput"></td>
+      			<td>&nbsp;IP&nbsp;</td>
+      			<td align="right"><input name="ip_secundario" value="{$stIP_SECUNDARIO}" style="width:150px;{if $stCAMBIOS_USUARIO.ip_secundario}background-color:#FFFF99;{/if}" class="tmInput"></td>
+      		</tr>
+      	</table>
+      </td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+    		<table width="100%" border="0">
+    			<tr>
+    				<td align="center"><strong style="color:#666666;">Alternativos</strong></td>
+    				<td align="right" width="90"><input type="button" value="agregar dns" class="tmButton" onclick="addNuevoDNS();"/></td>
+    			</tr>
+    		</table>
+    	</td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="center">
+    		<table cellpadding="0" cellspacing="0" id="tbAlternativos">
+    		{foreach from=$stDNS_ALTERNATIVOS key=k_alt item=v_alt}
+    			<tr>
+    				<td style="padding-bottom:5px;">DNS&nbsp;<input type="text" name="dns_alternativos[]" value="{$stDNS_ALTERNATIVOS.$k_alt}" class="tmInput" style="width:200px;"></td>
+    				<td style="padding-bottom:5px;">&nbsp;IP&nbsp;<input type="text" name="ip_alternativos[]" value="{$stIP_ALTERNATIVOS.$k_alt}" class="tmInput" style="width:150px;"></td>
+    				<td>&nbsp;<img src="{$stRUTAS.images}borrar.gif" border="0" onclick="delRowAlternativo(this);" style="cursor:pointer;vertical-align:middle;"/></td>
+    			</tr>
+    		{/foreach}
+    		</table>
+    	</td>
+    </tr>
+    <tr><td height="5"></td></tr>
+    <tr>
+    	<td colspan="2" align="center" style="padding:10px 5px 5px 5px;color:#666666;border-top:1px solid #8396A5;">
+    		<strong>Contacto Registrante</strong>
+    	</td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Pa&iacute;s</td>
+      <td class="tmDataTD"><input name="reg_pais" value="{$stREG_PAIS}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_pais}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Provincia</td>
+      <td class="tmDataTD"><input name="reg_provincia" value="{$stREG_PROVINCIA}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_provincia}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Ciudad</td>
+      <td class="tmDataTD"><input name="reg_ciudad" value="{$stREG_CIUDAD}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_ciudad}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">C.P.</td>
+      <td class="tmDataTD"><input name="reg_codigo_postal" value="{$stREG_CODIGO_POSTAL}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_codigo_postal}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Direcci&oacute;n</td>
+      <td class="tmDataTD"><input name="reg_direccion" value="{$stREG_DIRECCION}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_direccion}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Tel&eacute;fono</td>
+      <td class="tmDataTD"><input name="reg_telefono" value="{$stREG_TELEFONO}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_telefono}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+   <tr>
+      <td class="tmFieldCaptionTD">Email</td>
+      <td class="tmDataTD"><input name="reg_email" value="{$stREG_EMAIL}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_email}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre</td>
+      <td class="tmDataTD"><input name="reg_nombre" value="{$stREG_NOMBRE}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_nombre}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Apellido</td>
+      <td class="tmDataTD"><input name="reg_apellido" value="{$stREG_APELLIDO}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_apellido}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Empresa</td>
+      <td class="tmDataTD"><input name="reg_empresa" value="{$stREG_EMPRESA}" style="width:430px;{if $stCAMBIOS_USUARIO.reg_empresa}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr><td colspan="2" align="center" style="padding:5px;color:#666666;"><strong>Contacto Administrativo</strong></td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Pa&iacute;s</td>
+      <td class="tmDataTD"><input name="adm_pais" value="{$stADM_PAIS}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_pais}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Provincia</td>
+      <td class="tmDataTD"><input name="adm_provincia" value="{$stADM_PROVINCIA}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_provincia}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Ciudad</td>
+      <td class="tmDataTD"><input name="adm_ciudad" value="{$stADM_CIUDAD}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_ciudad}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">C.P.</td>
+      <td class="tmDataTD"><input name="adm_codigo_postal" value="{$stADM_CODIGO_POSTAL}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_codigo_postal}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Direcci&oacute;n</td>
+      <td class="tmDataTD"><input name="adm_direccion" value="{$stADM_DIRECCION}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_direccion}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Tel&eacute;fono</td>
+      <td class="tmDataTD"><input name="adm_telefono" value="{$stADM_TELEFONO}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_telefono}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+   <tr>
+      <td class="tmFieldCaptionTD">Email</td>
+      <td class="tmDataTD"><input name="adm_email" value="{$stADM_EMAIL}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_email}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre</td>
+      <td class="tmDataTD"><input name="adm_nombre" value="{$stADM_NOMBRE}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_nombre}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Apellido</td>
+      <td class="tmDataTD"><input name="adm_apellido" value="{$stADM_APELLIDO}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_apellido}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Empresa</td>
+      <td class="tmDataTD"><input name="adm_empresa" value="{$stADM_EMPRESA}" style="width:430px;{if $stCAMBIOS_USUARIO.adm_empresa}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr><td colspan="2" align="center" style="padding:5px;color:#666666;"><strong>Contacto T&eacute;cnico</strong></td></tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Pa&iacute;s</td>
+      <td class="tmDataTD"><input name="tec_pais" value="{$stTEC_PAIS}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_pais}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Provincia</td>
+      <td class="tmDataTD"><input name="tec_provincia" value="{$stTEC_PROVINCIA}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_provincia}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Ciudad</td>
+      <td class="tmDataTD"><input name="tec_ciudad" value="{$stTEC_CIUDAD}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_ciudad}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">C.P.</td>
+      <td class="tmDataTD"><input name="tec_codigo_postal" value="{$stTEC_CODIGO_POSTAL}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_codigo_postal}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Direcci&oacute;n</td>
+      <td class="tmDataTD"><input name="tec_direccion" value="{$stTEC_DIRECCION}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_direccion}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Tel&eacute;fono</td>
+      <td class="tmDataTD"><input name="tec_telefono" value="{$stTEC_TELEFONO}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_telefono}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+   <tr>
+      <td class="tmFieldCaptionTD">Email</td>
+      <td class="tmDataTD"><input name="tec_email" value="{$stTEC_EMAIL}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_email}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre</td>
+      <td class="tmDataTD"><input name="tec_nombre" value="{$stTEC_NOMBRE}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_nombre}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Apellido</td>
+      <td class="tmDataTD"><input name="tec_apellido" value="{$stTEC_APELLIDO}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_apellido}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Empresa</td>
+      <td class="tmDataTD"><input name="tec_empresa" value="{$stTEC_EMPRESA}" style="width:430px;{if $stCAMBIOS_USUARIO.tec_empresa}background-color:#FFFF99;{/if}" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top:10px;">
+      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+      	<tr>
+      	{if $stID && $stCAMBIOS_USUARIO}
+      		<td><input type="button" value="Limpiar cambios" class="tmButton" onclick="document.location='modificar.php?Id={$stID}&clear=1';"/></td>
+      	{/if}
+	        <td align="right"><input tabindex="2" name="btn_accion" type="submit" value="Aceptar" class="tmButton"></td>
+					<td align="right" width="75"><input tabindex="3" name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='listar.php';"></td>
+				</tr>
+        </table>
+        <input name="id" type="hidden" value="{$stID}" />
+        <input name="aux_dir_images" id="aux_dir_images" type="hidden" value="{$stRUTAS.images}" />
+      </td>
+    </tr>
+  </table>
+</form>
+{include file="pie.tpl.html"}

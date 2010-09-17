@@ -1,0 +1,70 @@
+{include file="encabezado.tpl.html"}
+<form method="post" action="{$stRUTAS.adm}adm.borrar.php?confirmado=1">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr><td height="3"></td></tr>
+  <tr><td align="right">
+  	<input style="width:140px;" name="btn_volver" type="button" value="Nuevo administrador" class="tmButton" onclick="location.href='adm.registrar.php';">
+  </td></tr>
+  <tr><td><font class="tmFormHeaderFont">Listado de administradores</font></td></tr>
+  <tr><td height="5"></td></tr>
+  <tr><td>Hay {$stREG_TOTAL} administradores</td></tr>
+  <tr><td><table align="right"><tr>
+	<td>
+		{if !$stLINKS.first}&nbsp;{else}
+			<a href="{$stLINKS.first}"><img src="{$stRUTAS.images}primero.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.previous}&nbsp;{else}
+			<a href="{$stLINKS.previous}"><img src="{$stRUTAS.images}anterior.gif" border="0"/></a>
+		{/if}
+	<td/>
+	<td>
+		{foreach from=$stPAGES item=link key=page}
+			{if $page == $stPAGE}{$page}&nbsp;
+			{else}<a class="tmNavigatorLink" href="{$link}">{$page}</a>&nbsp;{/if}
+		{/foreach}
+	</td>
+	<td>
+		{if !$stLINKS.next}&nbsp;{else}
+			<a href="{$stLINKS.next}"><img src="{$stRUTAS.images}siguiente.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.last}&nbsp;{else}
+			<a href="{$stLINKS.last}"><img src="{$stRUTAS.images}ultimo.gif" border="0"/></a>
+		{/if}
+	</td>
+	</tr></table></td></tr>
+  <tr><td>
+<table cellpadding="2" cellspacing="0" class="tmFormTABLE"> 
+	<tr>
+		<td class="tmColumnTD" nowrap>&nbsp;</td>
+		<td class="tmColumnTD" nowrap>&nbsp;</td>
+		<td class="tmColumnTD" nowrap width="170">Nombre</td>
+		<td class="tmColumnTD" nowrap width="150">Login</td>
+		<td class="tmColumnTD" nowrap width="170">Email</td>
+		<td class="tmColumnTD" nowrap width="80">Estado</td>
+		<td class="tmColumnTD" nowrap>&nbsp;</td>
+	</tr>
+{	foreach from=$stADMINISTRADORES key=id item=administrador}
+	<tr onmouseover="this.bgColor='#f2f2f0';" onMouseOut="this.bgColor='#FFFFFF';">
+		<td class='tmDataTD'><input type='checkbox' name='Id[]' value='{$id}' /></td>
+		<td class='tmDataTD'>
+			<a href='{$stRUTAS.adm}adm.modificar.php?Id={$id}'>
+				<img src='{$stRUTAS.images}editar.gif' title='Modificar' border='0' />
+			</a>
+		</td>
+		<td class='tmDataTD'><a class='tmDataLink' href='{$stRUTAS.adm}adm.modificar.php?Id={$id}'>{$administrador.Nombre|truncate:25:'...':true}</a></td>
+		<td class='tmDataTD'>{$administrador.Login}</td>
+		<td class='tmDataTD'>{$administrador.Email|truncate:26:'...':true}</td>
+		<td class='tmDataTD'>{$administrador.Enabled}</td>
+		<td class='tmDataTD'>
+			<a href='{$stRUTAS.adm}adm.borrar.php?Id[]={$id}' onclick="return confirmLink(this,'Confirma la eliminación?')">
+				<img src='{$stRUTAS.images}borrar.gif' title='Borrar' border='0' />
+			</a>
+		</td>
+	</tr>
+{ /foreach}
+</table></td></tr></table><br>
+<input style="width:140px;" type="submit" name="btn_borrar" value="Borrar seleccionados" class="tmButton" onclick="return confirm('Confirma la eliminación?');">
+</form>
+{include file="pie.tpl.html"}

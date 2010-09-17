@@ -1,0 +1,84 @@
+{include file="encabezado.tpl.html"}
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td height="5"></td></tr>
+<tr>
+  	<td>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<form method="POST" action="cli.listar.php" name="frmBusqueda">
+			<tr>
+			<td><font class="tmFormHeaderFont">Listado de clientes</font></td>
+			<td align="right"><input type="text" name="texto" value="{$stTEXT}" size="22" class="tmInput"></td>
+			<td><input name="btnBuscar" type="submit" value="Buscar" class="tmButton"></td>
+			<td align="right"><input style="width:110px;" type="button" value="Nuevo cliente" class="tmButton" onclick="location.href='cli.registrar.php';"></td>
+			</tr>
+		</form>
+		</table>
+  	</td>
+  </tr>
+  <tr><td height="5"></td></tr>
+  <tr><td>Hay {$stREG_TOTAL} clientes</td></tr>
+  <tr><td><table align="right"><tr>
+	<td>
+		{if !$stLINKS.first}&nbsp;{else}
+			<a href="{$stLINKS.first}"><img src="{$stRUTAS.images}primero.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.previous}&nbsp;{else}
+			<a href="{$stLINKS.previous}"><img src="{$stRUTAS.images}anterior.gif" border="0"/></a>
+		{/if}
+	<td/>
+	<td>
+		{foreach from=$stPAGES item=link key=page}
+			{if $page == $stPAGE}{$page}&nbsp;
+			{else}<a class="tmNavigatorLink" href="{$link}">{$page}</a>&nbsp;{/if}
+		{/foreach}
+	</td>
+	<td>
+		{if !$stLINKS.next}&nbsp;{else}
+			<a href="{$stLINKS.next}"><img src="{$stRUTAS.images}siguiente.gif" border="0"/></a>
+		{/if}
+	<td/><td>
+		{if !$stLINKS.last}&nbsp;{else}
+			<a href="{$stLINKS.last}"><img src="{$stRUTAS.images}ultimo.gif" border="0"/></a>
+		{/if}
+	</td>
+	</tr></table></td></tr>
+  <tr><td>
+<form method="post" action="{$stRUTAS.cli}cli.borrar.php?confirmado=1">
+<table cellpadding="2" cellspacing="0" class="tmFormTABLE"> 
+	<tr>
+		<td class="tmColumnTD">&nbsp;</td>
+		<td class="tmColumnTD" nowrap>&nbsp;</td>
+		<td class="tmColumnTD" nowrap width="400">
+			<a href="?{$stPARAMETROS}orden=nombre&sentido={$stSNT}&page={$stPAGE}" class="tmDataLinke">Nombre</a>
+		</td>
+		<td class="tmColumnTD" nowrap width="40">
+			<a href="?{$stPARAMETROS}orden=orden&sentido={$stSNT}&page={$stPAGE}" class="tmDataLinke">Orden</a>
+		</td>
+		<td class="tmColumnTD" nowrap>&nbsp;</td>
+	</tr>	
+{	foreach from=$stCLIENTES key=id item=cliente}
+	<tr>
+		<td class='tmDataTD'><input type='checkbox' name='Id[]' value='{$id}' /></td>
+		<td class='tmDataTD' valign="middle">
+			<a class='tmDataLink' href='{$stRUTAS.cli}cli.modificar.php?Id={$id}'>
+				<img src='{$stRUTAS.images}editar.gif' title='Modificar' border='0'/>
+			</a>
+		</td>
+		<td class='tmDataTD'>
+			<a class='tmDataLink' href='{$stRUTAS.cli}cli.modificar.php?Id={$id}'>{$cliente.Nombre}</a>
+		</td>
+		<td class='tmDataTD' style="text-align:center;">{$cliente.Orden}</td>
+		<td class='tmDataTD'>
+			<a class='tmDataLink' href='{$stRUTAS.cli}cli.borrar.php?Id[]={$id}' onclick="return confirmLink(this,'Confirma la eliminación?')">
+				<img src='{$stRUTAS.images}borrar.gif' title='Borrar' border='0'/>
+			</a>
+		</td>
+	</tr>
+{ /foreach}
+<tr><td height="5"></td></tr>
+<tr><td colspan="7" align="right"><input style="width:140px;" type="submit" name="btn_borrar" value="Borrar seleccionados" class="tmButton" onclick="return confirm('Confirma la eliminación?');"></td></tr>
+</table>
+</form>
+</td></tr></table>
+{include file="pie.tpl.html"}

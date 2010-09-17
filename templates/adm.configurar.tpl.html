@@ -1,0 +1,29 @@
+{include file="encabezado.tpl.html"}
+
+<form method="post" action="{$stACTION}">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE">
+  	<tr>
+  		<td align="center" class="tmFormHeaderFont" colspan="2">Email administrador de dominios</td>
+  	</tr>
+    <tr>
+      <td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-bottom:10px;padding-right:5px;" align="right">
+      	&Uacute;ltima actualizaci&oacute;n: <strong>{$stACTUALIZADO}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Cuenta administrador *</td>
+      <td class="tmDataTD"><input name="email" value="{$stEMAIL}" size="40" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" style="padding-top:10px;">
+        <input name="btn_accion" type="submit" value="Aceptar" class="tmButton">
+        <input name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='{$stRUTAS.admin}contenido.php';">
+      </td>
+    </tr>
+  </table>
+</form>
+
+{include file="pie.tpl.html"}

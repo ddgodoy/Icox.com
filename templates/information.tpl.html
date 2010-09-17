@@ -1,0 +1,13 @@
+{include file="encabezado.tpl.html"}
+<table>
+{section name=iLink loop=$stLINKS}
+	{if !$smarty.section.iLink.first}
+	<tr><td height="5"></td></tr>
+	{/if}
+	<tr><td><a class='tmDataLink' href='{$stLINKS[iLink].link}'>{$stLINKS[iLink].desc}</a></td></tr>
+	<tr><td height="5"></td></tr>
+{/section}
+<tr><td height="10"></td></tr>
+<tr><td>{$stMESSAGE}</td></tr>
+</table>
+{include file="pie.tpl.html"}

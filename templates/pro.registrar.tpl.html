@@ -1,0 +1,150 @@
+{include file="encabezado.tpl.html"}
+<script language="javascript" type="text/javascript">
+{literal}
+function change_solapa(lng){
+	document.getElementById('div_es').style.display = 'none';
+	document.getElementById('div_en').style.display = 'none';
+	document.getElementById('div_'+lng).style.display = 'block';
+
+	document.getElementById('td_solapa_es').className = 'solapa_lang';
+	document.getElementById('td_solapa_en').className = 'solapa_lang';
+	document.getElementById('td_solapa_'+lng).className = 'solapa_lang_act';
+}
+{/literal}
+</script>
+<form method="post" action="{$stACTION}" name="frmFormRegistrar" enctype="multipart/form-data">
+  <table cellpadding="2" cellspacing="0" class="tmFormTABLE" width="580">
+  	<tr><td class="tmFormHeaderFont" colspan="2" align="center">{$stBTN_ACTION} proyecto</td></tr>
+    <tr><td class="tmErrorDataTD" colspan="2">{$stERROR|default:'&nbsp;'}</td></tr>
+<!--  et  -->
+	<tr>
+		<td colspan="2">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td width="33%" align="center">Industrias</td>
+			<td width="33%" align="center">Categor&iacute;as</td>
+			<td width="33%" align="center">Subcategor&iacute;as</td>
+		</tr>
+		<tr>
+		<td align="center"><select class="tmSelect" style="width:185px;height:100px;" multiple name="industria[]">{$stINDUSTRIA}</select></td>
+		<td align="center"><select class="tmSelect" style="width:185px;height:100px;" multiple name="categoria[]">{$stCATEGORIA}</select></td>
+		<td align="center"><select class="tmSelect" style="width:185px;height:100px;" multiple name="subcategoria[]">{$stSUBCATEGORIA}</select></td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+	<tr><td height="5"></td></tr>
+<!--  et  -->
+	<tr>
+      <td class="tmFieldCaptionTD">Orden *</td>
+      <td class="tmDataTD"><input tabindex="0" name="orden" value="{$stORDEN}" style="width:50px;text-align:center;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Nombre *</td>
+      <td class="tmDataTD"><input tabindex="1" name="nombre" value="{$stNOMBRE}" style="width:500px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Referencia</td>
+      <td class="tmDataTD"><input tabindex="2" name="referencia" value="{$stREFERENCIA}" style="width:500px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Cliente</td>
+      <td class="tmDataTD"><input tabindex="3" name="cliente" value="{$stCLIENTE}" style="width:500px;" class="tmInput"></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Logo</td>
+      <td class="tmDataTD">
+      	<table cellpadding="0" cellspacing="0" border="0">
+	      <tr>
+      		<td><input id="imagen" name="imagen" type="file" class="tmInput" onchange="doPreview('imagen','preview')" /></td>
+      		<td>&nbsp;[160*120]</td><td width="29"></td>
+				{if $stIMAGEN}
+		      	<td class="tmFieldCaptionTD">&nbsp;Quitar imagen&nbsp;</td>
+	      		<td class="tmDataTD"><input type="checkbox" name="quitar_imagen" class="tmSelect"></td>
+	      	{/if}
+      	  </tr>
+      	 </table>
+      </td>
+    </tr>
+    </table>
+    <br />
+<!-- et -->
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<td width="10" class="solapa_td">&nbsp;</td>
+	<td width="80" class="solapa_lang_act" id="td_solapa_es" onclick="change_solapa('es');">Espa&ntilde;ol</td>
+	<td width="10" class="solapa_td">&nbsp;</td>
+	<td width="80" class="solapa_lang" id="td_solapa_en" onclick="change_solapa('en');">Ingl&eacute;s</td>
+	<td width="396" class="solapa_td">&nbsp;</td>
+</tr>
+</table>
+<div id="div_es">
+<table cellpadding="2" cellspacing="0" width="580">
+    <tr>
+      <td class="tmFieldCaptionTD" style="border-top:0px;" width="75">Objetivo</td>
+      <td class="tmDataTD" style="border-top:1px solid #3A4E5C;border-right:1px solid #3A4E5C;"><textarea tabindex="4" name="objetivo" style="width:500px;height:100px;" class="tmInput">{$stOBJETIVO}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Situaci&oacute;n</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;"><textarea tabindex="5" name="situacion" style="width:500px;height:100px;" class="tmInput">{$stSITUACION}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Propuesta</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;"><textarea tabindex="6" name="propuesta" style="width:500px;height:150px;" class="tmInput">{$stPROPUESTA}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD" style="border-bottom:1px solid #3A4E5C;">Resultados</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;border-bottom:1px solid #3A4E5C;"><textarea tabindex="7" name="resultados" style="width:500px;height:150px;" class="tmInput">{$stRESULTADOS}</textarea></td>
+    </tr>
+</table>
+</div>
+<div id="div_en" style="display:none;">
+<table cellpadding="2" cellspacing="0" width="580">
+    <tr>
+      <td class="tmFieldCaptionTD" style="border-top:0px;" width="75">Objective</td>
+      <td class="tmDataTD" style="border-top:1px solid #3A4E5C;border-right:1px solid #3A4E5C;"><textarea tabindex="4" name="objetivo_en" style="width:500px;height:100px;" class="tmInput">{$stOBJETIVO_EN}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Situation</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;"><textarea tabindex="5" name="situacion_en" style="width:500px;height:100px;" class="tmInput">{$stSITUACION_EN}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD">Proposal</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;"><textarea tabindex="6" name="propuesta_en" style="width:500px;height:150px;" class="tmInput">{$stPROPUESTA_EN}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tmFieldCaptionTD" style="border-bottom:1px solid #3A4E5C;">Results</td>
+      <td class="tmDataTD" style="border-right:1px solid #3A4E5C;border-bottom:1px solid #3A4E5C;"><textarea tabindex="7" name="resultados_en" style="width:500px;height:150px;" class="tmInput">{$stRESULTADOS_EN}</textarea></td>
+    </tr>
+</table>
+</div>
+    <br />
+<!-- et -->
+<table cellpadding="2" cellspacing="0" width="580">
+    <tr>
+      <td>
+      <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+      	<td><input type="button" value="Agregar imagen" class="tmButton" onclick="openWin('{$stRUTAS.img}img.registrar_pop.php?codigo={$stAUXID}',500,475);"></td>
+      	<td align="right">
+      		<input tabindex="8" name="btn_accion" type="submit" value="Aceptar" class="tmButton">
+	      	<input tabindex="9" name="btn_volver" type="button" value="Cancelar" class="tmButton" onclick="location.href='pro.listar.php?page={$stPAGE}';">
+	        <input name="id" type="hidden" value="{$stID}" />
+	        <input name="page" type="hidden" value="{$stPAGE}" />
+	        <input name="codigo" type="hidden" value="{$stAUXID}" />
+      	</td>
+      </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<table border="0" cellpadding="0" cellspacing="0" width="580" class="tmFormTABLE" style="height:130px;">
+	<tr>
+	<td align="center">
+    <div style="scroll:no;overflow:auto;width:160px;height:120px;background-image:url('{$stRUTAS.images}_fondo_upload.gif');border-width:1px;">
+		{if $stIMAGEN}<img src="{$stIMAGEN}" id="preview" border="0">{else}<img src="{$stRUTAS.images}_nada.gif" id="preview" border="0">{/if}
+    </div>
+	</tr>
+</table>
+{include file="pie.tpl.html"}

@@ -1,0 +1,52 @@
+{include file="tpl.cabecera_es.html"}
+<!--	inicio cuerpo		-->
+			<tr>
+				<td valign="top" class="cuerpo">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
+					<tr>
+					{include file="tpl.col_izquierda_es.html"}
+					<!--	inicio columna cuerpo		-->
+					<td class="col_cuerpo" valign="top" align="center">
+						<table width="90%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td align="center">
+								<!--	inicio contenido cuerpo		-->
+								<div class="div_cuerpo">
+								<br />
+								<div class="titulo_2" align="left">Clientes</div>
+<!--<a href="#"><img src="cOmmOns/images/ico_lupa.jpg" alt="view case study" border="0" /></a>-->
+<table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top" width="47%">
+{if $stCOLUMNA1}
+    	<ul class="clientes_li">
+{foreach from=$stCOLUMNA1 item=col1}
+		<li>{$col1}</li>
+{/foreach}
+		</ul>
+{else}&nbsp;{/if}
+	</td>
+    <td valign="top" width="47%">
+{if $stCOLUMNA2}
+    	<ul class="clientes_li">
+{foreach from=$stCOLUMNA2 item=col2}
+		<li>{$col2}</li>
+{/foreach}
+		</ul>
+{else}&nbsp;{/if}
+	</td>
+  </tr>
+</table>
+								</div>
+								<!--	final contenido cuerpo		-->
+							</td>
+						  </tr>
+						</table>
+					</td>
+					<!--	final columna cuerpo		-->
+					</tr>
+				</table>
+				</td>
+			</tr>
+<!--	fin cuerpo		-->
+{include file="tpl.pie_es.html"}

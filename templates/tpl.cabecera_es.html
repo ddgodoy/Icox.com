@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Icox Consulting</title>
+<link rel="Shortcut Icon" href="favicon.ico">
+<link href="{$stRUTAS.estilo}home.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}front.js"></script>
+<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}ie_swf.js"></script>
+{if $stSET_CSS_GALERIA}
+	<link rel="stylesheet" href="{$stRUTAS.estilo}jd.gallery.css" type="text/css" media="screen" charset="utf-8" />
+	<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}jd/mootools.js"></script>
+	<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}jd/jd.gallery.js"></script>
+{else}
+	<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}spry/SpryEffects.js"></script>
+{/if}
+</head>
+<body {$stACCION_ONLOAD}>
+	<center>
+		<table cellpadding="0" cellspacing="0" style="border:3px solid #ebebe9;">
+<!--	inicio cabecera		-->
+		<tr><td><script type="text/javascript">runSWF("{$stRUTAS.flash}cabecera.swf", 800, 121, 7, '#e2e3df');</script></td></tr>
+		<tr>
+			<td class="menu">
+				<table width="100%" border="0" align="center">
+				<tr>
+				<td width="11%" align="center" class="txt_menu" id="mn_company" onclick="goTo('company.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">EMPRESA</td>
+				<td width="1%" style="text-align:center;">|</td>
+				<td width="11%" align="center" class="txt_menu" id="mn_services" onclick="goTo('services.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">SERVICIOS</td>
+				<td width="1%" style="text-align:center;">|</td>
+		        <td width="11%" align="center" class="txt_menu" id="mn_clientes" onclick="goTo('clients.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">CLIENTES</td>
+				<td width="1%" style="text-align:center;">|</td>
+				<td width="11%" align="center" class="txt_menu" id="mn_portfolio" onclick="goTo('portfolio.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">PORTFOLIO</td>
+				<td width="1%" style="text-align:center;">|</td>
+				<td width="11%" align="center" class="txt_menu" id="mn_partners" onclick="goTo('partners.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">ASOCIADOS</td>
+				<td width="1%" style="text-align:center;">|</td>
+				<td width="11%" align="center" class="txt_menu" id="mn_contact" onclick="goTo('contact.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">CONTACTO</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+<!--	fin cabecera		-->
