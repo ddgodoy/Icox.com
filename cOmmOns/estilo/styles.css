@@ -1,0 +1,263 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+a { outline:none;}
+.clear {
+	clear: both;
+	height: 0px;
+}
+.rigth {
+	float: right;
+}
+
+.header {
+	background-image: url(../images/header_bg.jpg);
+	height: 88px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	position: relative;
+}
+
+.header .logo {
+	float: left;
+	margin-top: 10px;
+	margin-right: 40px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.header .menu {
+	list-style-type: none;
+	padding: 0px;
+	position: absolute;
+	margin: 0px;
+	top: 30px;
+	right: 85px;
+}
+.header .menu li {
+	display: inline;
+}
+.header .menu li a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #5d5f5f;
+	text-decoration: none;
+	background-image: url(../images/menu_normal.png);
+	display: block;
+	background-repeat: no-repeat;
+	float: left;
+	height: 33px;
+	width: 91px;
+	line-height: 33px;
+	text-align: center;
+}
+.header .menu li a:hover {
+	background-image: url(../images/menu_hover.png);
+}
+.header .menu li a.selected {
+	background-image: url(../images/menu_selected.png);
+	color: #FFF;
+}
+.header .lang {
+	display: block;
+	background-image: url(../images/lang_bg.png);
+	height: 23px;
+	width: 48px;
+	padding-left: 10px;
+	padding-top: 10px;
+	position: absolute;
+	overflow: hidden;
+	right: 20px;
+	top: 30px;
+}
+.header .lang:hover {
+	background-image: url(../images/lang_bg_hover.png);
+	overflow: visible;
+}
+.header .lang .desplegable {
+	position: absolute;
+	right: 0px;
+	top: 32px;
+	z-index: 100;
+	width: 49px;
+	background-image: url(../images/desplegable.png);
+	font-size: 11px;
+	text-decoration: none;
+	color: #333;
+	background-position: bottom;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+.header .lang .desplegable img {
+	float: left;
+	margin-right: 3px;
+}
+.banner  {
+	background-color: #999;
+	height: 200px;
+	clear: both;
+}
+.content {
+	background-image: url(../images/content_bg.jpg);
+	background-repeat: repeat-x;
+	min-height:400px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #FFF;
+	background-color: #FFF;
+	margin: 0px;
+	padding: 0px;
+	color: #5B5B5B;
+}
+.content .wrap {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-bottom: 40px;
+	padding-left: 0px;
+}
+
+
+.content .left_side {
+	float: left;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	width: 200px;
+}
+
+.content .left_side ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.content .left_side ul li {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+.content .left_side ul li a {
+	font-size: 14px;
+	color: #666;
+}
+.content .c_rigth {
+	float: left;
+}
+
+.content .c_rigth h1 {
+	font-size: 25px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c0cfcf;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	font-weight: normal;
+	display: block;
+	clear: both;
+}
+.content .c_rigth p {
+	font-size: 13px;
+}
+.content .c_rigth p.texto1 {
+	float: left;
+	display: block;
+	width: 350px;
+	padding: 10px;
+	font-size: 14px;
+	line-height: 23px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+
+.ancho1 {
+	width: 740px;
+}
+
+
+
+
+.footer {
+	background-image: url(../images/footer_bg.jpg);
+	background-repeat: repeat-x;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-bottom: 40px;
+	padding-left: 0px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #333;
+}
+.footer .wrap {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.footer dl {
+	float: left;
+	margin-right: 80px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+.footer dl dt {
+	font-size: 18px;
+	color: #555757;
+	margin-bottom: 10px;
+}
+.footer dl dd {
+	font-size: 12px;
+	color: #CCC;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+.footer dl dd a {
+	font-size: 12px;
+	color: #FFF;
+	text-decoration: none;
+}
+.footer dl dd a:hover { text-decoration:underline;}
+.footer .rigth dd .phone {
+	font-size: 20px;
+	color: #FFF;
+	margin-bottom: 15px;
+	display: block;
+	font-weight: normal;
+}
+.footer .rigth dd .copy {
+	color: #666;
+	font-size: 12px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.footer .rigth dd .logo {
+	margin-right: 0px;
+	margin-top: 3px;
+}
+.footer .rigth {
+	float: right;
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+}

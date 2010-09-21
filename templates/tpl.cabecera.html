@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Icox Consulting</title>
 <link rel="Shortcut Icon" href="favicon.ico">
-<link href="{$stRUTAS.estilo}home.css" type="text/css" rel="stylesheet">
+<link href="{$stRUTAS.estilo}styles.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}front.js"></script>
 <script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}ie_swf.js"></script>
 {if $stSET_CSS_GALERIA}
@@ -15,28 +15,20 @@
 	<script type="text/javascript" language="javascript" src="{$stRUTAS.jscript}spry/SpryEffects.js"></script>
 {/if}
 </head>
-<body {$stACCION_ONLOAD}>
-	<center>
-		<table cellpadding="0" cellspacing="0" style="border:3px solid #ebebe9;">
-<!--	inicio cabecera		-->
-		<tr><td><script type="text/javascript">runSWF("{$stRUTAS.flash}cabecera.swf", 800, 121, 7, '#e2e3df');</script></td></tr>
-		<tr>
-			<td class="menu">
-				<table width="100%" border="0" align="center">
-				<tr>
-				<td width="11%" align="center" class="txt_menu" id="mn_company" onclick="goTo('company.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">COMPANY</td>
-				<td width="1%" style="text-align:center;">|</td>
-				<td width="11%" align="center" class="txt_menu" id="mn_services" onclick="goTo('services.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">SERVICES</td>
-				<td width="1%" style="text-align:center;">|</td>
-		        <td width="11%" align="center" class="txt_menu" id="mn_clientes" onclick="goTo('clients.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">CLIENTS</td>
-				<td width="1%" style="text-align:center;">|</td>
-				<td width="11%" align="center" class="txt_menu" id="mn_portfolio" onclick="goTo('portfolio.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">PORTFOLIO</td>
-				<td width="1%" style="text-align:center;">|</td>
-				<td width="11%" align="center" class="txt_menu" id="mn_partners" onclick="goTo('partners.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">PARTNERS</td>
-				<td width="1%" style="text-align:center;">|</td>
-				<td width="11%" align="center" class="txt_menu" id="mn_contact" onclick="goTo('contact.php');" onmouseover="colorMn(this.id,1)" onmouseout="colorMn(this.id,0)">CONTACT</td>
-				</tr>
-				</table>
-		  </td>
-		</tr>
-<!--	fin cabecera		-->
+<body>
+<div class="header"> <img src="{$stRUTAS.images}logo.png" width="184" height="65" alt="Home" class="logo" />
+  <ul class="menu">
+    <li><a href="company.php" class="selected" id="mn_company" >COMPANY</a></li>
+    <li><a href="services.php" id="mn_services">SERVICES</a></li>
+    <li><a href="clients.php" id="mn_clientes">CLIENTS</a></li>
+    <li><a href="#">NOTICIAS</a></li>
+    <li><a href="portfolio.php" id="mn_portfolio">PORTFOLIO</a></li>
+    <li><a href="partners.php" id="mn_partners" >PARTNERS</a></li>
+    <li><a href="contact.php" id="mn_contact">CONTACT</a></li>
+  </ul>
+  <a href="#" class="lang"> 
+  	<img src="{$stRUTAS.images}lang_es.png" alt="Español" width="20" height="15" border="0" onclick="document.location='change.php?language=_es';" /> 
+    <span class="desplegable">
+    	<img src="{$stRUTAS.images}lang_en.png" alt="English" width="20" height="15" border="0" onclick="document.location='change.php?language=';" /> En</span>
+  </a> </div>
+<!--fin header-->
