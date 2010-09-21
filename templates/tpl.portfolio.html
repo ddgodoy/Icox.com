@@ -1,4 +1,13 @@
  {include file="tpl.cabecera.html"}
+ <script language="javascript" type="text/javascript">
+function resFiltro(){ldelim}
+	var ind = document.getElementById('industria').value;
+	var cat = document.getElementById('categoria').value;
+	var sub = document.getElementById('subcategoria').value;
+
+	document.location = 'portfolio.php?industria='+ind+'&categoria='+cat+'&subcategoria='+sub;
+{rdelim}
+</script>
 <div class="banner">
   <div class="titulo_2">Portfolio</div>
 </div>
@@ -6,7 +15,7 @@
 <div class="content">
   <div class="wrap"> {include file="tpl.col_izquierda.html"}
     <div class="c_rigth ancho1">
-      <h1>Clients</h1>
+      <h1>Our Portfolio</h1>
       <p class="texto2">We offer our clients the best quality services and full advice in all their requirements. In the same manner, we follow 
         them through the whole implementation process and we train the maintenance and "execution" personnel for the purpose of 
         train their own human capital.<br />
