@@ -1,23 +1,17 @@
 {include file="tpl.cabecera.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0">
-							<tr>
-								<td align="left">
-								<div class="borde_verde" id="div_img_3"><img src="{$stRUTAS.images}img_3.jpg" border="0"></div>
-								<script type="text/javascript">var oImg_3 = new Spry.Effect.Blind('div_img_3', {ldelim}duration:1500,from:'10px',to:'180px'{rdelim});</script>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br /><div class="titulo_2">Contact</div>
-								{if $stERROR}<div class="texto_error">{$stERROR}</div>{/if}
-								{if $stMENSAJE}<div class="texto_mensaje">{$stMENSAJE}</div>{/if}
-<script language="javascript" type="text/javascript">
+<div class="banner"></div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda.html"}
+    <div class="c_rigth ancho1">
+      <h1>Contact</h1>
+      {if $stERROR}
+      <div class="texto_error">{$stERROR}</div>
+      {/if}
+      {if $stMENSAJE}
+      <div class="texto_mensaje">{$stMENSAJE}</div>
+      {/if}
+      <script language="javascript" type="text/javascript">
 {literal}
 function check_contacto(){
 	var nombre  = document.getElementById('nombre');
@@ -35,7 +29,7 @@ function check_contacto(){
 }
 {/literal}
 </script>
-<form method="POST" action="contact.php" enctype="multipart/form-data">
+      <form method="POST" action="contact.php" enctype="multipart/form-data">
 		<table cellpadding="0" cellspacing="0" border="0">
 			<tr><td height="10"></td></tr>
 			<tr>
@@ -52,7 +46,7 @@ function check_contacto(){
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">* Phone :</td>
+				<td class="titulo_4">* Phone Number :</td>
 				<td><input name="telefono" id="telefono" tabindex="3" type="text" class="caja_texto" style="width:250px;" value="{$stTELEFONO}" maxlength="30"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
@@ -75,7 +69,7 @@ function check_contacto(){
 			</tr>
 			<tr><td height="15"></td></tr>
 			<tr>
-				<td class="titulo_3" valign="top">* Consultation</td>
+				<td class="titulo_3" valign="top">* Message</td>
 				<td colspan="2"><textarea name="consulta" id="consulta" tabindex="7" class="caja_texto" style="width:340px;height:100px;">{$stCONSULTA}</textarea></td>
 			</tr>
 			<tr><td height="10"></td></tr>
@@ -83,10 +77,10 @@ function check_contacto(){
 				<td colspan="3">
 					<table cellpadding="0" cellspacing="0" width="100%" border="0">
 					<tr>
-						<td style="font-family:arial;font-size:11px;color:#696969;">* fields required</td>
+						<td style="font-family:arial;font-size:11px;color:#696969;">* Required</td>
 						<td align="right">
-							<input name="btn_ejecutar" tabindex="8" type="submit" value="Submit" class="boton" onclick="return check_contacto();">
-							<input name="btn_borrar" tabindex="9" type="button" value="Clear" class="boton" onclick="document.location='contact.php';">
+							<input name="btn_ejecutar" tabindex="8" type="submit" value="Enviar" class="boton" onclick="return check_contacto();">
+							<input name="btn_borrar" tabindex="9" type="button" value="Borrar" class="boton" onclick="document.location='contact.php';">
 						</td>
 					</tr>
 					</table>
@@ -95,16 +89,18 @@ function check_contacto(){
 			<tr><td height="10"></td></tr>
 		</table>
 </form>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie.html"}
+
+
+
+
+
+
+
+
