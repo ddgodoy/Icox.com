@@ -53,11 +53,11 @@ function resFiltro(){ldelim}
       <!-- et -->
       {if $stPROYECTOS}
       {foreach from=$stPROYECTOS key=id item=valor}
-      <div class="proyecto"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo.jpg" border="0">{/if} <strong class="title">{$valor.Nombre}</strong>
+      <div class="proyecto"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo2.jpg" border="0">{/if} <strong class="title">{$valor.Nombre}</strong>
         <p>{$valor.Cliente}</p>
         {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span> {/if} </div>
       {/foreach}
-      
+      <div class="clear"></div>
       <table border="0" align="center">
         <tr>
           <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
