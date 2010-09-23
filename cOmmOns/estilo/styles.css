@@ -228,6 +228,62 @@ a { outline:none;}
 	margin-bottom: 20px;
 	margin-left: 0px;
 }
+.content .filtro {
+	font-size: 12px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #CCC;
+	border-bottom-color: #CCC;
+	background-color: #F2F2F2;
+	margin-bottom: 10px;
+}
+.content .filtro label {
+	font-size: 14px;
+	font-weight: bold;
+}
+.content .filter_title {
+	color: #333;
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: bold;
+	background-image: url(../images/filter_by.gif);
+	display: block;
+	background-repeat: no-repeat;
+	height: 24px;
+	width: 108px;
+	text-align: center;
+	margin-bottom: -1px;
+}
+.content .proyecto {
+	width: 170px;
+	margin: 7px;
+	height: 220px;
+	overflow: hidden;
+	float: left;
+}
+.content .proyecto img {
+	height: 120px;
+	width: 170px;
+}
+.content .proyecto .title {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.content .proyecto .ver_mas {
+	color: #333;
+	font-size: 11px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.content .proyecto p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 11px;
+}
 
 .ancho1 {
 	width: 740px;

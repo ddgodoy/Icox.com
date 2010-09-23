@@ -1,5 +1,5 @@
  {include file="tpl.cabecera.html"}
- <script language="javascript" type="text/javascript">
+<script language="javascript" type="text/javascript">
 function resFiltro(){ldelim}
 	var ind = document.getElementById('industria').value;
 	var cat = document.getElementById('categoria').value;
@@ -21,80 +21,58 @@ function resFiltro(){ldelim}
         train their own human capital.<br />
         <br />
         {if $stPROYECTOS}See our work for companies who demand excellence:{/if}</p>
-      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="borde_filtro">
+      <strong class="filter_title">Filter by</strong>
+      <table cellpadding="0" cellspacing="10" border="0" width="100%" class="filtro">
         <tr>
-          <td height="5"></td>
-        </tr>
-        <tr>
-          <td colspan="3" class="subtitulo_1">Filtrar por :</td>
-        </tr>
-        <tr>
-          <td height="7"></td>
-        </tr>
-        <tr>
-          <td width="33%" class="texto_filtro"><strong>Industria</strong></td>
-          <td width="33%" class="texto_filtro"><strong>Categor&iacute;a</strong></td>
-          <td width="33%" class="texto_filtro"><strong>Subcategor&iacute;a</strong></td>
-        </tr>
-        <tr>
-          <td height="3"></td>
+          <td width="33%" ><label>Industria</label></td>
+          <td width="33%" ><label>Categor&iacute;a</label></td>
+          <td width="33%" ><label>Subcategor&iacute;a</label></td>
         </tr>
         <tr>
           <td><select name="industria" id="industria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
               
+              
 			{$stINDUSTRIA}
 		
+            
             </select></td>
           <td><select name="categoria" id="categoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
               
+              
 			{$stCATEGORIA}
 		
+            
             </select></td>
           <td><select name="subcategoria" id="subcategoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
               
+              
 			{$stSUBCATEGORIA}
 		
+            
             </select></td>
         </tr>
+      </table>
+      <!-- et -->
+      {if $stPROYECTOS}
+      {foreach from=$stPROYECTOS key=id item=valor}
+      <div class="proyecto"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo.jpg" border="0">{/if} <strong class="title">{$valor.Nombre}</strong>
+        <p>{$valor.Cliente}</p>
+        {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span> {/if} </div>
+      {/foreach}
+      <div class="clear"></div>
+      <table border="0" align="center">
         <tr>
-          <td height="8"></td>
+          <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
+            {if $page == $stPAGE}{$page}&nbsp;
+            {else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
+            {/foreach} </td>
+        </tr>
+        <tr>
+          <td height="5"></td>
         </tr>
       </table>
-       <!-- et -->
-                {if $stPROYECTOS}
-                <table border="0" width="100%">
-                  <tr>
-                    <td height="10"></td>
-                  </tr>
-                  {foreach from=$stPROYECTOS key=id item=valor}
-                  <tr>
-                    <td width="170" height="120" align="center" valign="middle" bgcolor="#EAEAEA"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo.jpg" border="0">{/if} </td>
-                    <td style="border-bottom:1px dashed #B7B7B5;"><div class="txt_proyecto"><strong>{$valor.Nombre}</strong></div>
-                      <div class="txt_proyecto" style="padding-top:5px;">{$valor.Cliente}</div>
-                      {if $valor.VerMas}
-                      <div style="text-align:right;"><span class="txt_ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span></div>
-                      {/if} </td>
-                  </tr>
-                  <tr>
-                    <td height="5"></td>
-                  </tr>
-                  {/foreach}
-                </table>
-                <table border="0" align="center">
-                  <tr>
-                    <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
-                      {if $page == $stPAGE}{$page}&nbsp;
-                      {else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
-                      {/foreach} </td>
-                  </tr>
-                  <tr>
-                    <td height="5"></td>
-                  </tr>
-                </table>
-                {/if}
-    </div>
+      {/if} </div>
     <!--fin c_rigth-->
-    <div class="clear"></div>
   </div>
 </div>
 <!--fin content-->
