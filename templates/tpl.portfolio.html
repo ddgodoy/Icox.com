@@ -8,14 +8,12 @@ function resFiltro(){ldelim}
 	document.location = 'portfolio.php?industria='+ind+'&categoria='+cat+'&subcategoria='+sub;
 {rdelim}
 </script>
-<div class="banner">
-  <div class="titulo_2">Portfolio</div>
-</div>
+<div class="banner"><div class="wrap"><h1>Portfolio</h1></div></div>
 <!--fin banner-->
 <div class="content">
   <div class="wrap"> {include file="tpl.col_izquierda.html"}
     <div class="c_rigth ancho1">
-      <h1>Our Portfolio</h1>
+      <h2>Our Portfolio</h2>
       <p class="texto2">We offer our clients the best quality services and full advice in all their requirements. In the same manner, we follow 
         them through the whole implementation process and we train the maintenance and "execution" personnel for the purpose of 
         train their own human capital.<br />
@@ -60,7 +58,7 @@ function resFiltro(){ldelim}
         {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span> {/if} </div>
       {/foreach}
       <div class="clear"></div>
-      <table border="0" align="center">
+      <!--<table border="0" align="center">
         <tr>
           <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
             {if $page == $stPAGE}{$page}&nbsp;
@@ -70,7 +68,7 @@ function resFiltro(){ldelim}
         <tr>
           <td height="5"></td>
         </tr>
-      </table>
+      </table>-->
       {/if} </div>
     <!--fin c_rigth-->
   </div>
