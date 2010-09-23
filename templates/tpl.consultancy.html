@@ -1,20 +1,20 @@
 {include file="tpl.cabecera.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Consultancy</div>
-								<p class="subtitulo_1">Marketing Plan</p>
+<div class="banner">
+  <div class="wrap">
+    <h1>Services</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments">Developments</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy" class="selected">Consultancy</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness">E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda.html"}
+    <div class="c_rigth ancho1">      
+      <h2>Marketing Plan</h2>
 								<p class="txt_cuerpo">
 									Icox consultants are qualified to perform a complete company situacional study, and based in your financial and economic goals, 
 									diagram an Internet Marketing General Plan together with the CEO. This plan is considered a guide and a line of action, 
@@ -31,7 +31,7 @@
 									actors that are supposed to perform them (from the advertising actions, to the complete company restructuring, going through 
 									the products definition, meta market, comunication, sales strenght, clients)
 								</p>
-								<p class="subtitulo_1">Emerging Technologies</p>
+								<h2>Emerging Technologies</h2>
 								<p class="txt_cuerpo">
 									We are constantly training on new technologies in this "Unique Digital Space", were all economic trends converge, in order to 
 									provide our clients with the highest innovation adn development standards, optimizing resources, and using the latest progresses 
@@ -42,17 +42,17 @@
 									same manner, the human resources qualified enough to implement, administrate, and comunicate them are limited, and what could 
 									be a strong competitive advantage in front of other actors, can easily become an obstacle when taking the wrong decision.<br />
 									This is why in Icox testing laboratories, we are constantly analyzing and testing new alternative technologies and developments 
-									in these areas:<br /><br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Base Adminstration and management<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Language Programming<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software and working interface<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comunication Networks<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working Systems<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Security and Authentication<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-commerce<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multimedia Integrations.<br />
+									in these areas:
+									<ul><li>Data Base Adminstration and management</li>
+									<li>Language Programming</li>
+									<li>Software and working interface</li>
+									<li>Comunication Networks</li>
+									<li>Working Systems</li>
+									<li>Security and Authentication</li>
+									<li>E-commerce</li>
+									<li>Multimedia Integrations.</li></ul>
 								</p>
-								<p class="subtitulo_1">Audits</p>
+								<h2>Audits</h2>
 								<p class="txt_cuerpo">
 									In Icox we are constantly investigating about new technologies and structural, commercial and economic lineaments, with the 
 									purpose of advising you on the best course of actions for your company. In this sense we have developed audit strategies in 
@@ -64,7 +64,7 @@
 									In the same manner, external audits are developed so as to define correct growth and functioning of technological/commercial 
 									structures already mounted.
 								</p>
-								<p class="subtitulo_1">Transition Analysis</p>
+								<h2>Transition Analysis</h2>
 								<p class="txt_cuerpo">
 									New technology implementation may decisively affect your economic position in the current changing market, but one must 
 									consider that a wrong decision, may lead your company to a difficult quandary.<br />
@@ -75,16 +75,10 @@
 									human resources involved in the process. All these analysis and studies are closely related to the defined future company 
 									programs, objectives and goals, so they must be clearly set in a Marketing Plan.
 								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie.html"}

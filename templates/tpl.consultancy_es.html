@@ -1,20 +1,20 @@
 {include file="tpl.cabecera_es.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1_es.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Consultor&iacute;a</div>
-								<p class="subtitulo_1">Plan de Marketing</p>
+<div class="banner">
+  <div class="wrap">
+    <h1>Servicios</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments">Desarrollos</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy" class="selected">Consultor&iacute;a</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness" >E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda_es.html"}
+    <div class="c_rigth ancho1">      
+      <h2>Plan de Marketing</h2>
 								<p class="txt_cuerpo">
 									Los consultores de Icox estan capacitados para realizar un completo relevamiento de la 
 									situaci&oacute;n actual de su empresa, y en base a sus objetivos econ&oacute;micos financieros, 
@@ -36,7 +36,7 @@
 									forma de trabajo y divisiones internas, pasando por la definici&oacute;n de los productos, 
 									mercado meta, comunicaci&oacute;n, fuerza de ventas, atenci&oacute;n a los consumidores.
 								</p>
-								<p class="subtitulo_1">Tecnolog&iacute;as Emergentes</p>
+								<h2>Tecnolog&iacute;as Emergentes</h2>
 								<p class="txt_cuerpo">
 									A fin de brindar a nuestros clientes, servicios con los m&aacute;s altos est&aacute;ndares de innovaci&oacute;n 
 									y desarrollo, optimizando los recursos, y aplicando los nuevos y &uacute;ltimos descubrimientos a 
@@ -68,7 +68,7 @@
 									E-commerce<br />
 									Integraciones multimediales
 								</p>
-								<p class="subtitulo_1">Auditor&iacute;as Tecnol&oacute;gicas y Comerciales</p>
+								<h2>Auditor&iacute;as Tecnol&oacute;gicas y Comerciales</h2>
 								<p class="txt_cuerpo">
 									En Icox estamos constantemente capacit&aacute;ndonos sobre nuevas tecnolog&iacute;as y lineamientos 
 									estructurales econ&oacute;micos comerciales, para poder asesorarlo de la manera mas efectiva 
@@ -83,7 +83,7 @@
 									Asimismo, se desarrollan auditor&iacute;as externas a fin de determinar el correcto desarrollo y 
 									funcionamiento de estructuras tecnol&oacute;gicas/comerciales ya montadas.
 								</p>
-								<p class="subtitulo_1">An&aacute;lisis de Transici&oacute;n</p>
+								<h2>An&aacute;lisis de Transici&oacute;n</h2>
 								<p class="txt_cuerpo">
 									La implementaci&oacute;n de nuevas tecnolog&iacute;as puede afectar de manera decisiva su posici&oacute;n 
 									econ&oacute;mica en el cambiante mercado actual, pero hay que considerar que una mala desici&oacute;n, 
@@ -99,16 +99,10 @@
 									con los programas a futuro establecidos por la compa&ntilde;&iacute;a, con sus objetivos y metas y 
 									deben, por ello, ser plasmados de manera clara y concisa en un Plan de Marketing.
 								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie_es.html"}

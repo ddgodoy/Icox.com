@@ -1,20 +1,20 @@
 {include file="tpl.cabecera_es.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1_es.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Desarrollos</div>
-								<p class="subtitulo_1">Requerimientos Espec&iacute;ficos</p>
+<div class="banner">
+  <div class="wrap">
+    <h1>Servicios</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments" class="selected">Desarrollos</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy" >Consultor&iacute;a</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness" >E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda_es.html"}
+    <div class="c_rigth ancho1">      
+      <h2>Requerimientos Espec&iacute;ficos</h2>
 								<p class="txt_cuerpo">
 									Desarrollos integrales y espec&iacute;ficos de acuerdo a sus necesidades:<br />
 									Consultor&iacute;a general sobre Tecnolog&iacute;as y Negocios, Internet, E-commerce, Web Marketing, 
@@ -28,7 +28,7 @@
 									En Icox trabajamos y desarrollamos soluciones en estrategias de comunicaci&oacute;n, creamos 
 									aplicaciones y software a medida de los requerimientos de cada proyecto y cliente.
 								</p>
-								<p class="subtitulo_1">Planificaci&oacute;n Estructurada</p>
+								<h2>Planificaci&oacute;n Estructurada</h2>
 								<p class="txt_cuerpo">
 									De acuerdo a las posibilidades de cada cliente, y en relaci&oacute;n directa con sus objetivos 
 									comerciales, es probable que sea necesario un desarrollo de mediana o gran envergadura, 
@@ -40,7 +40,7 @@
 									impacto en la estructura comercial vigente y optimiza los factores que generan la 
 									informaci&oacute;n necesaria para la transici&oacute;n digital.
 								</p>
-								<p class="subtitulo_1">Experiencia</p>
+								<h2>Experiencia</h2>
 								<p class="txt_cuerpo">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desarrollo de proyectos para bienes y servicios. Trabajados en ambientes B2B, B2C, B2E, etc.<br />
     								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desarrollos de Wordflow usando Internet para estos procesos<br />
@@ -53,16 +53,10 @@
 									Microsoft Access, Aplicaciones inhal&aacute;mbricas, E-Commerce (carrito de compras, log&iacute;stica, proceso de 
 									pago) Dise&ntilde;o, Internet, Extranet, Intranet, entre otras.
 								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie_es.html"}

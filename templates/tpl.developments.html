@@ -1,62 +1,51 @@
 {include file="tpl.cabecera.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Developments</div>
-								<p class="subtitulo_1">Specific requirements</p>
-								<p class="txt_cuerpo">
-									Global and Specific (Custom) developments acording to your needs:<br />
-									General consulting on Technologies and Business, Internet, E-commerce, Web Marketing, Information Technology (IT) Audits, 
-									security, connectivity, programming, networks, etc. Internet Marketing Plans, emergent technologies analysis applied to 
-									new business and current comercial structures impact, staged developments, domain management and adminstration, global 
-									technical assistance.<br />
-									We make you available the best professionals so that they help you look for the perfect solution to your necessities. In 
-									Icox we work and develop solutions in communication strategies, we build applications and custom software according to 
-									each proyect and client requirements.
-								</p>
-								<p class="subtitulo_1">Structured Planning</p>
-								<p class="txt_cuerpo">
-									According to each client´s possibilities, and in direct relation with their commercial goals, a medium or large size 
-									development that cause a great impact in its company way of working or information generation may be necessary.<br />
-									In these cases we analyze your particular situation and diagram implementation plans in stages. In this manner the 
-									development is established in application segments, while training the staff needed to carry out maintenance or 
-									solutions, if necessary.<br />
-									This service modality minimizes impact in the active commercial structure and optimizes the factors that generate 
-									the needed information for the digital transition. 
-								</p>
-								<p class="subtitulo_1">Expertise</p>
-								<p class="txt_cuerpo">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proyects Development for goods and services exportation. Worked out in B2B, B2C, B2E enviroments, etc.<br />
-    								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Workflow developments using Internet for these processes<br />
-    								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ERP (Enterprise Resource Planning)<br />
-    								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCM(Supply Chain Management)<br />
-    								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRM (Customer Relationship Management)<br />
-    								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content Management<br /><br />
-									Icox Consulting works with tools and programming languajes such as PHP, ASP, JSP, .NET, Perl, Java, JavaScript, DHTML, 
-									VBScript, mySQL, mSQL, PostgreSQL, Microsoft SQL, C++ builder, VBS, Microsoft Access, Wireless Applications, E-Commerce 
-									(Shopping cart, logistics, payment process) Design, Internet, Extranet, Intranet, amongst others.
-								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+<div class="banner">
+  <div class="wrap">
+    <h1>Services</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments" class="selected">Developments</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy">Consultancy</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness">E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda.html"}
+    <div class="c_rigth ancho1">      
+      <h2>Specific requirements</h2>
+      <p class="txt_cuerpo"> Global and Specific (Custom) developments acording to your needs:<br />
+        General consulting on Technologies and Business, Internet, E-commerce, Web Marketing, Information Technology (IT) Audits, 
+        security, connectivity, programming, networks, etc. Internet Marketing Plans, emergent technologies analysis applied to 
+        new business and current comercial structures impact, staged developments, domain management and adminstration, global 
+        technical assistance.<br />
+        We make you available the best professionals so that they help you look for the perfect solution to your necessities. In 
+        Icox we work and develop solutions in communication strategies, we build applications and custom software according to 
+        each proyect and client requirements. </p>
+      <h2>Structured Planning</h2>
+      <p class="txt_cuerpo"> According to each client´s possibilities, and in direct relation with their commercial goals, a medium or large size 
+        development that cause a great impact in its company way of working or information generation may be necessary.<br />
+        In these cases we analyze your particular situation and diagram implementation plans in stages. In this manner the 
+        development is established in application segments, while training the staff needed to carry out maintenance or 
+        solutions, if necessary.<br />
+        This service modality minimizes impact in the active commercial structure and optimizes the factors that generate 
+        the needed information for the digital transition. </p>
+      <h2>Expertise</h2>
+      <p class="txt_cuerpo"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proyects Development for goods and services exportation. Worked out in B2B, B2C, B2E enviroments, etc.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Workflow developments using Internet for these processes<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ERP (Enterprise Resource Planning)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCM(Supply Chain Management)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRM (Customer Relationship Management)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content Management<br />
+        <br />
+        Icox Consulting works with tools and programming languajes such as PHP, ASP, JSP, .NET, Perl, Java, JavaScript, DHTML, 
+        VBScript, mySQL, mSQL, PostgreSQL, Microsoft SQL, C++ builder, VBS, Microsoft Access, Wireless Applications, E-Commerce 
+        (Shopping cart, logistics, payment process) Design, Internet, Extranet, Intranet, amongst others. </p>
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie.html"}

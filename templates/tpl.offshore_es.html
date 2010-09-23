@@ -1,20 +1,21 @@
 {include file="tpl.cabecera_es.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1_es.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Offshore</div>
-								<p class="subtitulo_1">Desarrollos</p>
+<div class="banner">
+  <div class="wrap">
+    <h1>Servicios</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore" class="selected">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments" >Desarrollos</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy" >Consultor&iacute;a</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness" >E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda_es.html"}
+    <div class="c_rigth ancho1">      
+      <h2>Desarrollos</h2>
+      	
 								<p class="txt_cuerpo">
 									Los beneficios que la tecnolog&iacute;a de la Informaci&oacute;n puede proveer a una compa&ntilde;&iacute;a, 
 									independientemente de su tama&ntilde;o, son de conocimiento común, tanto como lo son los r&aacute;pidos 
@@ -45,7 +46,7 @@
 									adelante diferentes desrrollos destinados a cubrir sus requerimientos en todo lo 
 									referente a TI.
 								</p>
-								<p class="subtitulo_1">Ventajas</p>
+								<h2>Ventajas</h2>
 								<p class="txt_cuerpo">
 									Las operaciones en "Offshore" puede ofrecerle una amplia variedad de beneficios, incluyendo:
 									Competencia t&eacute;cnica: Los mejores profesionales del &aacute;rea de TI est&aacute;n disponibles y pueden 
@@ -63,7 +64,7 @@
 									cuando los objetivos b&aacute;sicos han sido logrados. En adici&oacute;n, es normal ahora en compa&ntilde;&iacute;as 
 									de tipo Offshore ofrecer soluciones de precio fijado en tiempos l&iacute;mites garantizados.
 								</p>
-								<p class="subtitulo_1">Icox Consulting</p>
+								<h2>Icox Consulting</h2>
 								<p class="txt_cuerpo">
 									Nuestra compa&ntilde;&iacute;a ofrece desarrollos del tipo Offshore en diferentes &aacute;reas de trabajo y 
 									servicio:<br /><br />
@@ -87,16 +88,10 @@
 									gran variedad de desarrollos Offshore en proyectos E-business de alta calidad a un 
 									precio muy razonable. Nuestra cartera de clientes satisfechos dan cuenta de ello. 
 								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie_es.html"}

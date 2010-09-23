@@ -1,54 +1,8 @@
-<!--	inicio columna izquierda		-->
-<td class="col_izquierda" valign="top">
-	<table>
-		<tr>
-			<td class="titulo_1">>&nbsp;IDIOMAS</td>
-		</tr>
-	</table>
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
-		<tr><td height="15"></td></tr>
-		<tr>
-			<td align="center">
-				<img src="{$stRUTAS.images}ar.jpg" border="0" onclick="document.location='change.php?language=_es';" style="cursor:pointer;" title="Espa&ntilde;ol">
-			</td>
-			<td align="center">
-				<img src="{$stRUTAS.images}us_disabled.jpg" border="0" onclick="document.location='change.php?language=';" style="cursor:pointer;" title="Ingl&eacute;s">
-			</td>
-		</tr>
-		<tr><td height="15"></td></tr>
-	</table>
-	<table>
-		<tr>
-			<td class="titulo_1">>&nbsp;SUBSECCIONES</td>
-		</tr>
-	</table>
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
-		<tr><td height="15"></td></tr>
-		<tr>
-			<td width="20" align="center"><img src="{$stRUTAS.images}flecha_col_izq.gif" border="0"></td>
-			<td align="left"><span class="txt_izq" id="iz_company" onmouseover="colorIz(this.id,1)" onmouseout="colorIz(this.id,0)" onclick="goTo('company.php');">Informaci&oacute;n Corporativa</span></td>
-		</tr>
-		<tr><td height="15"></td></tr>
-		<tr>
-			<td width="20" align="center"><img src="{$stRUTAS.images}flecha_col_izq.gif" border="0"></td>
-			<td align="left"><span class="txt_izq" id="iz_management" onmouseover="colorIz(this.id,1)" onmouseout="colorIz(this.id,0)" onclick="goTo('management.php');">Management</span></td>
-		</tr>
-		<tr><td height="15"></td></tr>
-		<tr>
-			<td width="20" align="center"><img src="{$stRUTAS.images}flecha_col_izq.gif" border="0"></td>
-			<td align="left"><span class="txt_izq" id="iz_offices" onmouseover="colorIz(this.id,1)" onmouseout="colorIz(this.id,0)" onclick="goTo('offices.php');">Oficinas</span></td>
-		</tr>
-		<tr><td height="15"></td></tr>
-	</table>
-	<table>
-		<tr><td class="titulo_1">>&nbsp;DESCARGA</td></tr>
-	</table>
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
-		<tr><td height="15"></td></tr>
-		<tr>
-			<td width="20" align="center"><img src="{$stRUTAS.images}flecha_col_izq.gif" border="0"></td>
-			<td align="left"><span class="txt_izq" id="iz_brochure" onmouseover="colorIz(this.id,1)" onmouseout="colorIz(this.id,0)" onclick="downLoad('to_down/icox_es.pdf');">Folleto Corporativo</span></td>
-		</tr>
-	</table>
-</td>
-<!--	final columna izquierda		-->
+<div class="left_side">
+      <ul>
+        <li><a href="company.php" id="iz_company" >Informaci&oacute;n Corporativa</a></li>
+        <li><a href="management.php" id="iz_management">Management</a></li>
+        <li><a href="offices.php" id="iz_offices">Oficinas</a></li>
+        <li><a onclick="downLoad('to_down/icox.pdf');" id="iz_brochure">Folleto Corporativo</a></li>
+      </ul>    
+    </div><!--fin left_side-->

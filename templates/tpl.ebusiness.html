@@ -1,22 +1,20 @@
 {include file="tpl.cabecera.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_1.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<div class="borde_verde" id="div_img_6"><img src="{$stRUTAS.images}img_6.jpg" border="0"></div>
-								<script type="text/javascript">var oImg_6 = new Spry.Effect.Blind('div_img_6', {ldelim}duration:1500,from:'10px',to:'180px'{rdelim});</script>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">E-business</div>
-								<p class="subtitulo_1">What is E-business?</p>
+<div class="banner">
+  <div class="wrap">
+    <h1>Services</h1>
+    <ul>
+        <li><a href="offshore.php" id="iz_offshore">Offshore</a></li>
+        <li><a href="developments.php" id="iz_developments">Developments</a></li>
+        <li><a href="consultancy.php" id="iz_consultancy">Consultancy</a></li>
+        <li><a href="ebusiness.php" id="iz_ebusiness" class="selected">E-business</a></li>
+        <li><a href="networking.php" id="iz_networking" >Networking</a></li>
+      </ul></div>
+</div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda.html"}
+    <div class="c_rigth ancho1">      
+      <h2>What is E-business?</h2>
 								<p class="txt_cuerpo">
 									E-business is the transformation of the key processes of business, by means of using Internet technologies. An organization 
 									based on e-business, directly connects the business critical systems, with its components (clients, employees, salesmen, 
@@ -28,7 +26,7 @@
 									the techniques necessary to implement the required technology. For that reason, any professional must be enabled to 
 									manage, direct and plan programs that adapt to the existing enterprise requirements in the market.
 								</p>
-								<p class="subtitulo_1">The Importance of e-business at the present time</p>
+								<h2>The Importance of e-business at the present time</h2>
 								<p class="txt_cuerpo">
 									At the moment big as well as small companies use the Web to communicate with their associates, to connect themselves 
 									to the data systems and to carry out commercial transactions. This is e-business, where Internet comes together with 
@@ -37,7 +35,7 @@
 									applications are interactive, making possible transactions of enormous amounts of data and allowing to those who use them 
 									to make businesses in a more rational and effective form.
 								</p>
-								<p class="subtitulo_1">The key is in changing</p>
+								<h2>The key is in changing</h2>
 								<p class="txt_cuerpo">
 									Enterprises that adopt e-business solutions are companies capable of adapting to constant changes. In order to carry 
 									out the transitions without disadvantages, one must remember two important ideas:<br /><br />
@@ -51,16 +49,10 @@
 									infrastructure appropiately planned and executed. An infrastructure that can work 24 hours of the day, the seven 
 									days of the week, 365 days of the year and that is ready to make their business more profitable.
 								</p>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie.html"}
