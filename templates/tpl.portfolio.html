@@ -57,8 +57,8 @@ function resFiltro(){ldelim}
         <p>{$valor.Cliente}</p>
         {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span> {/if} </div>
       {/foreach}
-      <div class="clear"></div>
-      <!--<table border="0" align="center">
+      
+      <table border="0" align="center">
         <tr>
           <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
             {if $page == $stPAGE}{$page}&nbsp;
@@ -68,8 +68,8 @@ function resFiltro(){ldelim}
         <tr>
           <td height="5"></td>
         </tr>
-      </table>-->
-      {/if} </div>
+      </table>
+      {/if} </div><div class="clear"></div>
     <!--fin c_rigth-->
   </div>
 </div>
