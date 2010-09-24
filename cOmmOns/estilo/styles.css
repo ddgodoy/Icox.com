@@ -153,6 +153,13 @@ a { outline:none;}
 	height: 266px;
 	text-align: center;
 }
+.banner.home span {
+	display: block;
+	background-image: url(../images/bannheader.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 266px;
+}
 
 .content {
 	background-image: url(../images/content_bg.jpg);
