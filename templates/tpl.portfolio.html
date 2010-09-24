@@ -18,13 +18,13 @@ function resFiltro(){ldelim}
         them through the whole implementation process and we train the maintenance and "execution" personnel for the purpose of 
         train their own human capital.<br />
         <br />
-        {if $stPROYECTOS}See our work for companies who demand excellence:{/if}</p>
+        {if $stPROYECTOS}<strong>See our work for companies who demand excellence:</strong>{/if}</p>
       <strong class="filter_title">Filter by</strong>
       <table cellpadding="0" cellspacing="10" border="0" width="100%" class="filtro">
         <tr>
-          <td width="33%" ><label>Industria</label></td>
-          <td width="33%" ><label>Categor&iacute;a</label></td>
-          <td width="33%" ><label>Subcategor&iacute;a</label></td>
+          <td width="33%" ><label>Industry</label></td>
+          <td width="33%" ><label>Category</label></td>
+          <td width="33%" ><label>Subcategory</label></td>
         </tr>
         <tr>
           <td><select name="industria" id="industria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
@@ -55,12 +55,12 @@ function resFiltro(){ldelim}
       {foreach from=$stPROYECTOS key=id item=valor}
       <div class="proyecto"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo2.jpg" border="0">{/if} <strong class="title">{$valor.Nombre}</strong>
         <p>{$valor.Cliente}</p>
-        {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span> {/if} </div>
+        {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">View more</span> {/if} </div>
       {/foreach}
       <div class="clear"></div>
       <table border="0" align="center">
         <tr>
-          <td class="txt_paginado"> {foreach from=$stPAGES item=link key=page}
+          <td class="paginado"> {foreach from=$stPAGES item=link key=page}
             {if $page == $stPAGE}{$page}&nbsp;
             {else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
             {/foreach} </td>

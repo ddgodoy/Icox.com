@@ -1,7 +1,4 @@
 {include file="tpl.cabecera_es.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
 <script language="javascript" type="text/javascript">
 function resFiltro(){ldelim}
 	var ind = document.getElementById('industria').value;
@@ -11,98 +8,69 @@ function resFiltro(){ldelim}
 	document.location = 'portfolio.php?industria='+ind+'&categoria='+cat+'&subcategoria='+sub;
 {rdelim}
 </script>
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_es.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td>
-								<!--<div class="borde_verde" id="div_img_7"><img src="{$stRUTAS.images}img_7.jpg" border="0"></div>
-								<script type="text/javascript">var oImg_7 = new Spry.Effect.Blind('div_img_7', {ldelim}duration:1500,from:'10px',to:'180px'{rdelim});</script>-->
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br />
-								<div class="titulo_2">Portfolio</div>
-								<p class="txt_cuerpo">
-									Brindamos a nuestros clientes la más alta calidad en servicios y completo asesoramiento en todos sus 
+<div class="banner"><div class="wrap"><h1>Portfolio</h1></div></div>
+<!--fin banner-->
+<div class="content">
+<div class="wrap"> {include file="tpl.col_izquierda_es.html"}
+    <div class="c_rigth ancho1">
+      <h2>NUestro Portfolio</h2>
+      <p class="texto2">Brindamos a nuestros clientes la más alta calidad en servicios y completo asesoramiento en todos sus 
 									requerimientos. Asimismo los acompa&ntilde;amos en la etapa de implementaci&oacute;n y capacitamos al personal 
-									responsable del mantenimiento o ejecuci&oacute;n a fin de formar su propio capital humano.<br />
-									{if $stPROYECTOS}Vea nuestro trabajo para empresas que demandan excelencia:{/if}
-								</p>
-								</div>
-<!-- et -->
-<table cellpadding="0" cellspacing="0" border="0" width="100%" class="borde_filtro">
-<tr><td height="5"></td></tr>
-<tr><td colspan="3" class="subtitulo_1">Filtrar por :</td></tr>
-<tr><td height="7"></td></tr>
-<tr>
-	<td width="33%" class="texto_filtro"><strong>Industria</strong></td>
-	<td width="33%" class="texto_filtro"><strong>Categor&iacute;a</strong></td>
-	<td width="33%" class="texto_filtro"><strong>Subcategor&iacute;a</strong></td>
-</tr>
-<tr><td height="3"></td></tr>
-<tr>
-	<td>
-		<select name="industria" id="industria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+									responsable del mantenimiento o ejecuci&oacute;n a fin de formar su propio capital humano.<br /><br />
+									{if $stPROYECTOS}<strong>Vea nuestro trabajo para empresas que demandan excelencia:</strong>{/if}</p>
+      <strong class="filter_title">Filtrar por:</strong>
+      <table cellpadding="0" cellspacing="10" border="0" width="100%" class="filtro">
+        <tr>
+          <td width="33%" ><label>Industria</label></td>
+          <td width="33%" ><label>Categor&iacute;a</label></td>
+          <td width="33%" ><label>Subcategor&iacute;a</label></td>
+        </tr>
+        <tr>
+          <td><select name="industria" id="industria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+              
+              
 			{$stINDUSTRIA}
-		</select>
-	</td>
-	<td>
-		<select name="categoria" id="categoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+		
+            
+            </select></td>
+          <td><select name="categoria" id="categoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+              
+              
 			{$stCATEGORIA}
-		</select>
-	</td>
-	<td>
-		<select name="subcategoria" id="subcategoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+		
+            
+            </select></td>
+          <td><select name="subcategoria" id="subcategoria" class="caja_texto" style="width:190px;" onchange="resFiltro();">
+              
+              
 			{$stSUBCATEGORIA}
-		</select>
-	</td>
-</tr>
-<tr><td height="8"></td></tr>
-</table>
-<!-- et -->
-{if $stPROYECTOS}
-<table border="0" width="100%">
-<tr><td height="10"></td></tr>
-{foreach from=$stPROYECTOS key=id item=valor}
-<tr>
-	<td width="170" height="120" align="center" valign="middle" bgcolor="#EAEAEA">
-	{if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo.jpg" border="0">{/if}
-	</td>
-	<td style="border-bottom:1px dashed #B7B7B5;">
-		<div class="txt_proyecto"><strong>{$valor.Nombre}</strong></div>
-		<div class="txt_proyecto" style="padding-top:5px;">{$valor.Cliente}</div>
-		{if $valor.VerMas}
-			<div style="text-align:right;"><span class="txt_ver_mas" onclick="document.location='project.php?Id={$id}';">ver m&aacute;s</span></div>
-		{/if}
-	</td>
-</tr>
-<tr><td height="5"></td></tr>
-{/foreach}
-</table>
-<table border="0" align="center">
-<tr>
-	<td class="txt_paginado">
-		{foreach from=$stPAGES item=link key=page}
-			{if $page == $stPAGE}{$page}&nbsp;
-			{else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
-		{/foreach}
-	</td>
-</tr>
-<tr><td height="5"></td></tr>
-</table>
-{/if}
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+		
+            
+            </select></td>
+        </tr>
+      </table>
+      <!-- et -->
+      {if $stPROYECTOS}
+      {foreach from=$stPROYECTOS key=id item=valor}
+      <div class="proyecto"> {if $valor.Imagen}<img src="{$valor.Imagen}" border="0">{else}<img src="{$stRUTAS.images}sin_logo2.jpg" border="0">{/if} <strong class="title">{$valor.Nombre}</strong>
+        <p>{$valor.Cliente}</p>
+        {if $valor.VerMas} <span class="ver_mas" onclick="document.location='project.php?Id={$id}';">Ver m&aacute;s</span> {/if} </div>
+      {/foreach}
+      <div class="clear"></div>
+      <table border="0" align="center">
+        <tr>
+          <td class="paginado"> {foreach from=$stPAGES item=link key=page}
+            {if $page == $stPAGE}{$page}&nbsp;
+            {else}<a href="{$link}" style="color:#2C2C2C;">{$page}</a>&nbsp;{/if}
+            {/foreach} </td>
+        </tr>
+        <tr>
+          <td height="5"></td>
+        </tr>
+      </table>
+      {/if} </div><div class="clear"></div>
+    <!--fin c_rigth-->
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie_es.html"}
