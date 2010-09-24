@@ -1,10 +1,10 @@
 {include file="tpl.cabecera.html"}
-<div class="banner"></div>
+<div class="banner"><div class="wrap"><h1>Contact</h1></div></div>
 <!--fin banner-->
 <div class="content">
   <div class="wrap"> {include file="tpl.col_izquierda.html"}
     <div class="c_rigth ancho1">
-      <h1>Contact</h1>
+      
       {if $stERROR}
       <div class="texto_error">{$stERROR}</div>
       {/if}
@@ -30,46 +30,46 @@ function check_contacto(){
 {/literal}
 </script>
       <form method="POST" action="contact.php" enctype="multipart/form-data">
-		<table cellpadding="0" cellspacing="0" border="0">
+		<table width="486" border="0" cellpadding="0" cellspacing="0" class="contact">
 			<tr><td height="10"></td></tr>
 			<tr>
-				<td class="titulo_3" valign="top" width="110">Personal Data</td>
-				<td class="titulo_4" width="90">* Name :</td>
-				<td><input name="nombre" id="nombre" tabindex="1" type="text" class="caja_texto" style="width:250px;" value="{$stNOMBRE}" maxlength="50"></td>
+				<td class="titulo_3" valign="top" width="146"><strong>Personal Data</strong></td>
+				<td class="titulo_4" width="90"><label>* Name :</label></td>
+				<td width="250"><input name="nombre" id="nombre" tabindex="1" type="text" class="caja_texto" style="width:250px;" value="{$stNOMBRE}" maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">* Email :</td>
+				<td class="titulo_4"><label>* Email :</label></td>
 				<td><input name="email" id="email" tabindex="2" type="text" class="caja_texto" style="width:250px;" value="{$stEMAIL}" maxlength="200"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">* Phone Number :</td>
+				<td class="titulo_4"><label>* Phone:</label></td>
 				<td><input name="telefono" id="telefono" tabindex="3" type="text" class="caja_texto" style="width:250px;" value="{$stTELEFONO}" maxlength="30"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">Country :</td>
+				<td class="titulo_4"><label>Country :</label></td>
 				<td><input name="pais" id="pais" tabindex="4" type="text" class="caja_texto" style="width:250px;" value="{$stPAIS}" maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">City :</td>
+				<td class="titulo_4"><label>City :</label></td>
 				<td><input name="ciudad" id="ciudad" tabindex="5" type="text" class="caja_texto" style="width:250px;" value="{$stCIUDAD}"maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">Address :</td>
+				<td class="titulo_4"><label>Address :</label></td>
 				<td><input name="direccion" id="direccion" tabindex="6" type="text" class="caja_texto" style="width:250px;" value="{$stDIRECCION}"maxlength="200"></td>
 			</tr>
 			<tr><td height="15"></td></tr>
 			<tr>
-				<td class="titulo_3" valign="top">* Message</td>
+				<td class="titulo_3" valign="top"><strong>* Message</strong></td>
 				<td colspan="2"><textarea name="consulta" id="consulta" tabindex="7" class="caja_texto" style="width:340px;height:100px;">{$stCONSULTA}</textarea></td>
 			</tr>
 			<tr><td height="10"></td></tr>

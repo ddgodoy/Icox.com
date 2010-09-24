@@ -1,23 +1,17 @@
 {include file="tpl.cabecera_es.html"}
-<!--	inicio cuerpo		-->
-			<tr>
-				<td valign="top" class="cuerpo">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%" style="height:100%;">
-					<tr>
-					{include file="tpl.col_izquierda_es.html"}
-					<!--	inicio columna cuerpo		-->
-					<td class="col_cuerpo" valign="top" align="center">
-						<table cellpadding="0" cellspacing="0">
-							<tr>
-								<td align="left">
-								<div class="borde_verde" id="div_img_3"><img src="{$stRUTAS.images}img_3.jpg" border="0"></div>
-								<script type="text/javascript">var oImg_3 = new Spry.Effect.Blind('div_img_3', {ldelim}duration:1500,from:'10px',to:'180px'{rdelim});</script>
-								<!--	inicio contenido cuerpo		-->
-								<div class="div_cuerpo">
-								<br /><div class="titulo_2">Contacto</div>
-								{if $stERROR}<div class="texto_error">{$stERROR}</div>{/if}
-								{if $stMENSAJE}<div class="texto_mensaje">{$stMENSAJE}</div>{/if}
-<script language="javascript" type="text/javascript">
+<div class="banner"><div class="wrap"><h1>Contacto</h1></div></div>
+<!--fin banner-->
+<div class="content">
+  <div class="wrap"> {include file="tpl.col_izquierda_es.html"}
+    <div class="c_rigth ancho1">
+      
+      {if $stERROR}
+      <div class="texto_error">{$stERROR}</div>
+      {/if}
+      {if $stMENSAJE}
+      <div class="texto_mensaje">{$stMENSAJE}</div>
+      {/if}
+      <script language="javascript" type="text/javascript">
 {literal}
 function check_contacto(){
 	var nombre  = document.getElementById('nombre');
@@ -25,57 +19,57 @@ function check_contacto(){
 	var telefono= document.getElementById('telefono');
 	var consulta= document.getElementById('consulta');
 	
-	if (nombre.value == '')  {alert('Complete el Nombre');  nombre.focus();return false;}
-	if (email.value == '')   {alert('Complete el Email');   email.focus(); return false;}
-	if (telefono.value == ''){alert('Complete el Telefono');phone.focus(); return false;}
-	if (consulta.value == ''){alert('Complete la Consulta');consultation.focus(); return false;}
+	if (nombre.value == '')  {alert('Complete the Name');  nombre.focus(); return false;}
+	if (email.value == '')   {alert('Complete the Email'); email.focus();  return false;}
+	if (telefono.value == ''){alert('Complete the Phone'); phone.focus();  return false;}
+	if (consulta.value == ''){alert('Complete the Consultation'); consultation.focus(); return false;}
 	
 	document.forms[0].submit();
 	return true;
 }
 {/literal}
 </script>
-<form method="POST" action="contact.php" enctype="multipart/form-data">
-		<table cellpadding="0" cellspacing="0" border="0">
+      <form method="POST" action="contact.php" enctype="multipart/form-data">
+		<table width="486" cellpadding="0" cellspacing="0" border="0" class="contact">
 			<tr><td height="10"></td></tr>
 			<tr>
-				<td class="titulo_3" valign="top" width="110">Datos Personales</td>
-				<td class="titulo_4" width="90">* Nombre :</td>
-				<td><input name="nombre" id="nombre" tabindex="1" type="text" class="caja_texto" style="width:250px;" value="{$stNOMBRE}" maxlength="50"></td>
+				<td class="titulo_3" valign="top" width="144"><strong>Datos Personales</strong></td>
+				<td class="titulo_4" width="92"><label>* Nombre :</label></td>
+				<td width="250"><input name="nombre" id="nombre" tabindex="1" type="text" class="caja_texto" style="width:250px;" value="{$stNOMBRE}" maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">* Email :</td>
+				<td class="titulo_4"><label>* Email :</label></td>
 				<td><input name="email" id="email" tabindex="2" type="text" class="caja_texto" style="width:250px;" value="{$stEMAIL}" maxlength="200"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">* Tel&eacute;fono :</td>
+				<td class="titulo_4"><label>* Tel&eacute;fono :</label></td>
 				<td><input name="telefono" id="telefono" tabindex="3" type="text" class="caja_texto" style="width:250px;" value="{$stTELEFONO}" maxlength="30"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">Pa&iacute;s :</td>
+				<td class="titulo_4"><label>Pa&iacute;s :</label></td>
 				<td><input name="pais" id="pais" tabindex="4" type="text" class="caja_texto" style="width:250px;" value="{$stPAIS}" maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">Ciudad :</td>
+				<td class="titulo_4"><label>Ciudad :</label></td>
 				<td><input name="ciudad" id="ciudad" tabindex="5" type="text" class="caja_texto" style="width:250px;" value="{$stCIUDAD}"maxlength="50"></td>
 			</tr>
 			<tr><td height="5"></td></tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td class="titulo_4">Direcci&oacute;n :</td>
+				<td class="titulo_4"><label>Direcci&oacute;n :</label></td>
 				<td><input name="direccion" id="direccion" tabindex="6" type="text" class="caja_texto" style="width:250px;" value="{$stDIRECCION}"maxlength="200"></td>
 			</tr>
 			<tr><td height="15"></td></tr>
 			<tr>
-				<td class="titulo_3" valign="top">* Consulta</td>
+				<td class="titulo_3" valign="top"><strong>* Consulta</strong></td>
 				<td colspan="2"><textarea name="consulta" id="consulta" tabindex="7" class="caja_texto" style="width:340px;height:100px;">{$stCONSULTA}</textarea></td>
 			</tr>
 			<tr><td height="10"></td></tr>
@@ -95,16 +89,10 @@ function check_contacto(){
 			<tr><td height="10"></td></tr>
 		</table>
 </form>
-								</div>
-								<!--	final contenido cuerpo		-->
-								</td>
-							</tr>
-						</table>
-					</td>
-					<!--	final columna cuerpo		-->
-					</tr>
-				</table>
-				</td>
-			</tr>
-<!--	fin cuerpo		-->
+    </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
+  </div>
+</div>
+<!--fin content-->
 {include file="tpl.pie_es.html"}

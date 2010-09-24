@@ -179,22 +179,34 @@ a { outline:none;}
 	width: 200px;
 }
 
-.content .left_side ul {
+.content .left_side ul.links {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
 }
-.content .left_side ul li {
-	padding: 0px;
+.content .left_side ul.links li {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 10px;
 	margin-left: 0px;
+	background-image: url(../images/separador.jpg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 15px;
+	padding-left: 0px;
 }
-.content .left_side ul li a {
+.content .left_side ul.links li a {
 	font-size: 14px;
 	color: #666;
+	text-decoration: none;
+	background-image: url(../images/flecha_links.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 17px;
 }
+.content .left_side ul.links li a:hover {text-decoration:underline;}
 .content .c_rigth {
 	float: left;
 }
@@ -305,7 +317,21 @@ a { outline:none;}
 	font-size: 11px;
 	margin-bottom: 5px;
 }
-
+.content .contact { font-size:13px;}
+.content dl{
+	font-size: 13px;
+}
+.content dt{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.content dd{
+	margin-bottom: 20px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding: 0px;
+}
 .ancho1 {
 	width: 740px;
 }
