@@ -213,6 +213,27 @@ a { outline:none;}
 	display: block;
 	clear: both;
 }
+.content .c_rigth a {
+	color: #09C;
+}
+.content  h2.especial {
+	position:relative;
+	margin-bottom: 20px;
+	
+	}
+.content  h2.especial .pdf {
+	font-size: 13px;
+	display: block;
+	float: right;
+	line-height: 28px;
+	position: absolute;
+	top: 5px;
+	right: 0px;
+}
+.content  h2.especial .pdf img {
+	float: left;
+	margin-right: 5px;
+}
 .content .c_rigth p {
 	font-size: 13px;
 }

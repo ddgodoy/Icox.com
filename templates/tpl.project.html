@@ -1,84 +1,59 @@
 {include file="tpl.cabecera.html"}
- <script language="javascript" type="text/javascript">
+<script language="javascript" type="text/javascript">
 {literal}
 function startGallery() {
 	var myGallery = new gallery($('myGallery'), {timed: false});
 }
 window.onDomReady(startGallery);
 {/literal}
-</script>           
-            
-<div class="banner"></div>
+</script>
+<div class="banner">
+  <div class="wrap">
+    <h1>Portfolio</h1>
+  </div>
+</div>
 <!--fin banner-->
 <div class="content">
-  <div class="wrap">
-    {include file="tpl.col_izquierda.html"}
-<div class="c_rigth ancho1">
-    	<h1>Mission</h1>
-      	<table border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<td>
-			<!--	inicio contenido cuerpo		-->
-			<div class="div_cuerpo">
-			<br />
-			<div class="titulo_2">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-			  <tr>
-			    <td width="58%">{$stNOMBRE}</td>
-			    <td width="8%" height="20" align="right"><img src="{$stRUTAS.images}pdf.gif" /></td>
-			    <td width="34%" align="right" class="brochure">
-			    	<div class="alertaPdf" style="display:none;">
-			    		<p>You must be logged in to<br />download printable brochure</p>
-			    	</div>
-			    	<strong>Project brochure Quality:</strong>
-			    	&nbsp;<a href="project_pdf.php?Id={$stID}&q=h" target="_blank">High</a>
-			    	&nbsp;<a href="project_pdf.php?Id={$stID}&q=l" target="_blank">Low</a>
-			     </td>
-			  </tr>
-			</table>
-            </div>
-			{if $stREFERENCIA}
-				<p><a href="{$stREFERENCIA}" target="_blank" class="subtitulo_1">{$stREFERENCIA}</a></p>
-			{/if}
-<div align="center">
-{if $stFOTOS}
-  <div id="myGallery">
-{foreach from=$stFOTOS item=valor}
-    <div class="imageElement"><img src="{$valor}" class="full" /></div>
-{/foreach}
+  <div class="wrap"> {include file="tpl.col_izquierda.html"}
+    <div class="c_rigth ancho1">
+      <h2 class="especial">{$stNOMBRE}
+        <div class="alertaPdf" style="display:none;">
+          <p>You must be logged in to<br />
+            download printable brochure</p>
+        </div>
+        <span class="pdf"><img src="{$stRUTAS.images}pdf.jpg" /> Project brochure Quality: <a href="project_pdf.php?Id={$stID}&q=h" target="_blank">High</a> | <a href="project_pdf.php?Id={$stID}&q=l" target="_blank">Low</a></span> </h2>
+      <div align="center"> {if $stFOTOS}
+        <div id="myGallery"> {foreach from=$stFOTOS item=valor}
+          <div class="imageElement"><img src="{$valor}" class="full" /></div>
+          {/foreach} </div>
+        {else}
+        {if $stIMAGEN}<img src="{$stIMAGEN}" border="0">{/if}
+        {/if} </div>
+      {if $stCLIENTE}
+      <p><strong>Client:&nbsp;</strong><span>{$stCLIENTE}</span></p>
+      {/if}	
+      {if $stREFERENCIA}
+      <p> <strong>Web:</strong> <a href="{$stREFERENCIA}" target="_blank">{$stREFERENCIA}</a></p>
+      {/if}            
+      {if $stOBJETIVO}
+      <p><strong>Objective:</strong></p>
+      <p>{$stOBJETIVO}</p>
+      {/if}
+      {if $stSITUACION}
+      <p><strong>Situation:</strong></p>
+      <p>{$stSITUACION}</p>
+      {/if}
+      {if $stPROPUESTA}
+      <p><strong>Proposal:</strong></p>
+      <p>{$stPROPUESTA}</p>
+      {/if}
+      {if $stRESULTADOS}
+      <p><strong>Results:</strong></p>
+      <p>{$stRESULTADOS}</p>
+      {/if} </div>
+    <!--fin c_rigth-->
+    <div class="clear"></div>
   </div>
-{else}
-	{if $stIMAGEN}<img src="{$stIMAGEN}" border="0">{/if}
-{/if}
 </div>
-			{if $stCLIENTE}<p class="subtitulo_1" style="text-align:center;">Client:&nbsp;<span style="color:#2C2C2C;">{$stCLIENTE}</span></p>{/if}	
-			{if $stOBJETIVO}
-				<p class="subtitulo_1">Objective</p>
-				<p class="txt_cuerpo">{$stOBJETIVO}</p>
-			{/if}
-			{if $stSITUACION}
-				<p class="subtitulo_1">Situation</p>
-				<p class="txt_cuerpo">{$stSITUACION}</p>
-			{/if}
-			{if $stPROPUESTA}
-				<p class="subtitulo_1">Proposal</p>
-				<p class="txt_cuerpo">{$stPROPUESTA}</p>
-			{/if}
-			{if $stRESULTADOS}
-				<p class="subtitulo_1">Results</p>
-				<p class="txt_cuerpo">{$stRESULTADOS}</p>
-			{/if}
-			</div>
-			<!--	final contenido cuerpo		-->
-			</td>
-		</tr>
-	</table>
-    </div><!--fin c_rigth-->
-<div class="clear"></div>
-  </div>
-  
-</div>
-<!--fin content-->           
-            
-
+<!--fin content-->
 {include file="tpl.pie.html"}

@@ -3,10 +3,18 @@
 	height: 330px;
 	z-index:5;
 	display: none;
-	border-left: 3px solid #96CD3F;
-	border-top: 3px solid #96CD3F;
-	border-right: 3px solid #96CD3F;
-	border-bottom: 25px solid #96CD3F;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #D7D7D7;
+	border-right-color: #D7D7D7;
+	border-bottom-color: #D7D7D7;
+	border-left-color: #D7D7D7;
 }
 .jdGallery{
 	overflow: hidden;
@@ -152,12 +160,16 @@
 .jdGallery a.left{
 	left: 0;
 	top: 0;
-	background: url('../images/fleche1.gif') no-repeat center left;
+	background-image: url(../images/fleche1.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 .jdGallery a.right{
 	right: 0;
 	top: 0;
-	background: url('../images/fleche2.gif') no-repeat center right;
+	background-image: url(../images/fleche2.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
 }
 .jdGallery a.open{
 	left: 0;
