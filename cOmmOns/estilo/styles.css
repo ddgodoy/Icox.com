@@ -280,9 +280,9 @@ a { outline:none;}
 	cursor: pointer;
 }
 .content .proyecto p {
-	margin: 0px;
 	padding: 0px;
 	font-size: 11px;
+	margin-bottom: 5px;
 }
 
 .ancho1 {
