@@ -147,6 +147,13 @@ a { outline:none;}
 .banner ul li a.selected {
 	background-position: left top;
 }
+.banner.home {
+	background-image: url(../images/ban_head_bg.jpg);
+	background-repeat: repeat-x;
+	height: 266px;
+	text-align: center;
+}
+
 .content {
 	background-image: url(../images/content_bg.jpg);
 	background-repeat: repeat-x;
