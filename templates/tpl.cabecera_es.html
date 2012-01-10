@@ -28,9 +28,11 @@
     <li><a href="partners.php" id="mn_partners" >ASOCIADOS</a></li>
     <li><a href="contact.php" id="mn_contact">CONTACTO</a></li>
   </ul>
-  <a href="#" class="lang"> 
-  	<img src="{$stRUTAS.images}lang_es.png" alt="Español" width="20" height="15" border="0" onclick="document.location='change.php?language=_es';" /> 
-    <span class="desplegable">
-    	<img src="{$stRUTAS.images}lang_en.png" alt="English" width="20" height="15" border="0" onclick="document.location='change.php?language=';" /> En</span>
-  </a> </div>
+  <a class="lang"> 
+  	<img src="{$stRUTAS.images}lang_es.png" alt="Español" width="20" height="15" border="0" onclick="document.location='change.php?language=_es';" />
+    <span class="desplegable" onclick="document.location='change.php?language=';">
+    	<img src="{$stRUTAS.images}lang_en.png" alt="English" width="20" height="15" border="0"/> En
+    </span>
+  </a>
+</div>
 <!--fin header-->
