@@ -1,5 +1,6 @@
 <?php
-	class clsMyDB{
+	class clsMyDB
+	{
 		var $Host = '';
 		var $User = '';
 		var $Pass = '';
@@ -7,10 +8,13 @@
 		var $linkDB;
 		var $Errores = array();
 
-		  function clsMyDB($host='localhost', $user='usr_icox_es', $pass='pas_icox_es', $database='icox_com_prueba'){
+		function clsMyDB($host='localhost', $user='usr_icox_es', $pass='pas_icox_es', $database='icox_com_prueba')
+		{
 			$this->Connect($host, $user, $pass, $database);
 		}
-		function Connect($host = '', $user = '', $pass = '', $database=''){
+		//
+		function Connect($host = '', $user = '', $pass = '', $database='')
+		{
 			$this->Errores = array();
 			$this->Host = $host;
 			$this->User = $user;
@@ -23,23 +27,29 @@
 			if (!$this->linkDB){$this->Errores['Connect'] = 'No pude conectarme a MySQL';}
 			if (!empty($database)){$this->SelectDB($database);}
 		}
-		function selectDB($database){
+		//
+		function selectDB($database)
+		{
 			$this->Database = '';
 			if ($this->linkDB){
 				if (mysql_select_db($database, $this->linkDB)){$this->Database = $database;}
 				else {$this->Errores['Select_DB'] = 'No pude seleccionar la BD';}
 			}
 		}
-		function isConnected(){
+		//
+		function isConnected()
+		{
 			if (!$this->linkDB){
-				$this->Errores['Connect'] = 'No hay una conexi�n disponible'; return FALSE;
+				$this->Errores['Connect'] = 'No hay una conexion disponible'; return FALSE;
 			}
 			if (empty($this->Database)){
 				$this->Errores['Select_DB'] = 'No hay una BD disponible'; return FALSE;
 			}
 			return TRUE;
 		}
-		function Query($consulta){
+		//
+		function Query($consulta)
+		{
 			if (!$this->isConnected()){return FALSE;}
 			$this->clearErrores();
 			$result = mysql_query($consulta, $this->linkDB);
@@ -47,11 +57,13 @@
 			if (!$result){
 				$this->Errores['Query'] = 'No es posible ejecutar la consulta!'; return FALSE;
 			} elseif (mysql_num_rows($result) == 0){
-				$this->Errores['Query'] = 'La consulta no devolvi� registros!'; return FALSE;
+				$this->Errores['Query'] = 'La consulta no devolvio registros!'; return FALSE;
 			}
 			return $result;
 		}
-		function Command($command){
+		//
+		function Command($command)
+		{
 			if (!$this->isConnected()){return FALSE;}
 			$this->clearErrores();
 			$result = mysql_query($command, $this->linkDB);
@@ -160,18 +172,21 @@
 		   return($iVal);
 		}
 //---------------------------------------------------------
-		function ValidarMail($Email){
+		function ValidarMail($Email)
+		{
 			$result = array();
-			if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $Email)){
+
+			if (!preg_match('/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i', $Email)) {
 	  			$result[0] = false;
-	        	$result[1] = "El email parece incorrecto (revise el @ y los puntos)";
-	        	return $result;
+        	$result[1] = "El email parece incorrecto (revise el @ y los puntos)";
+			} else {
+				$result[0] = true; $result[1] = "$Email es valido.";
 			}
-			$result[0] = true; $result[1] = "$Email es v�lido.";
-	    	return $result;
+    	return $result;
 		}
 //---------------------------------------------------------
-		function redimensionar($imagen_original, $imagen_thumb, $ruta_destino, $extension, $ancho, $alto){
+		function redimensionar($imagen_original, $imagen_thumb, $ruta_destino, $extension, $ancho, $alto)
+		{
 			$ext = $extension;
 			$uploaddir = $ruta_destino;
 			$uploadfile = $imagen_original;
