@@ -55,7 +55,7 @@
 			 "resultados, pro.proImagen as logo FROM $stTABLAS WHERE pro.proId > 0 $stFILTER ORDER BY pro.proOrden";
 	$PAGE  = (isset($_GET['page']))?(integer)$_GET['page']:1;
 
-	$oPaginado = new clsPaginadoMySQL($QUERY, $oMyDB, $PAGE, 6);
+	$oPaginado = new clsPaginadoMySQL($QUERY, $oMyDB, $PAGE, 8);
 	$oPaginado->doPaginar();	
 
 	if ($oPaginado->getCantidadRegistros() > 0){

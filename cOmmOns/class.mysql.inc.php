@@ -96,7 +96,7 @@
 //---------------------------------------------------------
 		function forSave($param){$param = (string) $param;$param = addslashes($param);return $param;}
 		function forEdit($param){$param = htmlentities(stripslashes($param)); return $param;}
-		function forShow($param){return nl2br($this->forEdit($param));}
+		function forShow($param){return $param;}
 		function forHtml($param){$param = stripslashes($param); return nl2br($param);}
 //---------------------------------------------------------
 		function convertDate($mysqlDate, $format = ''){
