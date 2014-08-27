@@ -69,7 +69,7 @@
 							</table>
 						</body>
 						</html>";
-				if (@send_mail("informacion@icox.com", $stEMAIL, 'Icox Consulting - Datos Contacto', $html, $texto)){
+				if (@send_mail("info@icox.com", $stEMAIL, 'CONTACTO DESDE LA WEB ICOX.COM', $html, $texto)){
 					$stMENSAJE  = 'Sent successfully. Soon we will communicate with you. Thanks';
 					if ($_SESSION['_front_idioma'] == '_es'){
 						$stMENSAJE  = 'Envio exitoso. Nos comunicaremos con Ud a la brevedad. Gracias';
